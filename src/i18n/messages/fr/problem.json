@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "Le problème",
+  "title": "Votre entreprise est invisible sur internet ?",
+  "subtitle": "Ces problèmes vous sont familiers ?",
+  "problems": {
+    "invisible": {
+      "stat": "88%",
+      "statLabel": "cherchent sur Google",
+      "title": "Invisible sur Google",
+      "description": "Si vous n'apparaissez pas, votre concurrent apparaît"
+    },
+    "slow": {
+      "stat": "3s",
+      "statLabel": "pour perdre un client",
+      "title": "Site lent ou inexistant",
+      "description": "Les clients abandonnent les sites qui traînent"
+    },
+    "offline": {
+      "stat": "24/7",
+      "statLabel": "les clients cherchent en ligne",
+      "title": "Fermé hors des heures",
+      "description": "Combien de clients perdez-vous à 22h ?"
+    },
+    "manual": {
+      "stat": "10h+",
+      "statLabel": "par semaine gaspillées",
+      "title": "Tâches manuelles répétitives",
+      "description": "Des heures à répondre aux mêmes questions"
+    }
+  },
+  "cta": {
+    "text": "Nous avons la solution",
+    "ariaLabel": "Découvrir nos solutions"
+  }
+}

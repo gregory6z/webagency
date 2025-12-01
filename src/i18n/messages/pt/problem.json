@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "O problema",
+  "title": "Sua empresa está invisível na internet?",
+  "subtitle": "Estes problemas são familiares?",
+  "problems": {
+    "invisible": {
+      "stat": "88%",
+      "statLabel": "pesquisam no Google",
+      "title": "Invisível no Google",
+      "description": "Se você não aparece, seu concorrente aparece"
+    },
+    "slow": {
+      "stat": "3s",
+      "statLabel": "para perder um cliente",
+      "title": "Site lento ou inexistente",
+      "description": "Clientes abandonam sites que demoram"
+    },
+    "offline": {
+      "stat": "24/7",
+      "statLabel": "clientes buscam online",
+      "title": "Fora do horário comercial",
+      "description": "Quantos clientes você perde às 22h?"
+    },
+    "manual": {
+      "stat": "10h+",
+      "statLabel": "por semana desperdiçadas",
+      "title": "Tarefas manuais repetitivas",
+      "description": "Horas respondendo as mesmas perguntas"
+    }
+  },
+  "cta": {
+    "text": "Nós temos a solução",
+    "ariaLabel": "Ver nossas soluções"
+  }
+}

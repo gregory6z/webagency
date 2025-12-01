@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
-import { HeroVisual } from "./HeroVisual";
+import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
+import { Button } from "@/components/ui/button"
+import { HeroVisual } from "./HeroVisual"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -16,10 +16,10 @@ const fadeUp = {
       ease: [0.25, 0.1, 0.25, 1] as const,
     },
   }),
-};
+}
 
 export function Hero() {
-  const t = useTranslations("hero");
+  const t = useTranslations("hero")
 
   return (
     <section className="relative lg:h-[calc(100dvh-72px)] flex items-center justify-center overflow-hidden">
@@ -39,9 +39,7 @@ export function Hero() {
               className="hidden md:inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-border-dark bg-bg-secondary"
             >
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm text-[var(--text-secondary)]">
-                {t("badge")}
-              </span>
+              <span className="text-sm text-[var(--text-secondary)]">{t("badge")}</span>
             </motion.div>
 
             {/* Title - Desktop */}
@@ -74,9 +72,7 @@ export function Hero() {
               variants={fadeUp}
               className="hidden md:block max-w-[560px] mb-10 lg:mb-12"
             >
-              <p className="text-sm text-[var(--text-muted)] mb-2">
-                {t("subtitleShort")}
-              </p>
+              <p className="text-sm text-[var(--text-muted)] mb-2">{t("subtitleShort")}</p>
               <p className="text-xl lg:text-[22px] text-[var(--text-primary)] leading-relaxed">
                 {t("subtitle")}
               </p>
@@ -144,5 +140,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,19 +1,17 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 
-// Animação sequencial: um badge por vez
-// Duração 4s + espaço 6s entre cada = ciclo total ~24s
 const badgeDelays = {
   speed: 1,
   seo: 7,
   automation: 13,
   lead: 19,
-};
+}
 
 export function HeroVisual() {
-  const t = useTranslations("hero.visual");
+  const t = useTranslations("hero.visual")
 
   return (
     <div className="relative w-full h-[320px] sm:h-[340px] lg:h-[480px] xl:h-[520px]">
@@ -44,9 +42,7 @@ export function HeroVisual() {
               <p className="text-[10px] lg:text-xs text-[var(--text-muted)] mb-0.5 lg:mb-1">
                 {t("visitors")}
               </p>
-              <p className="text-base lg:text-2xl font-semibold text-[var(--accent)]">
-                +247%
-              </p>
+              <p className="text-base lg:text-2xl font-semibold text-[var(--accent)]">+247%</p>
             </div>
             <div className="bg-[var(--bg-tertiary)] rounded-lg lg:rounded-xl p-2.5 lg:p-4">
               <p className="text-[10px] lg:text-xs text-[var(--text-muted)] mb-0.5 lg:mb-1">
@@ -73,7 +69,7 @@ export function HeroVisual() {
         </div>
       </motion.div>
 
-      {/* Speed Badge - Top Right → Move diagonal ↗ (direita-cima) */}
+      {/* Speed Badge - Top Right */}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
         animate={{
@@ -119,15 +115,13 @@ export function HeroVisual() {
             </svg>
           </div>
           <div>
-            <p className="text-sm font-medium text-[var(--text-primary)]">
-              {t("speed")}
-            </p>
+            <p className="text-sm font-medium text-[var(--text-primary)]">{t("speed")}</p>
             <p className="text-xs text-[var(--accent)]">{t("speedValue")}</p>
           </div>
         </div>
       </motion.div>
 
-      {/* SEO Badge - Top Left → Move diagonal ↖ (esquerda-cima) */}
+      {/* SEO Badge - Top Left */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{
@@ -175,15 +169,13 @@ export function HeroVisual() {
             </svg>
           </div>
           <div>
-            <p className="text-sm font-medium text-[var(--text-primary)]">
-              {t("seo")}
-            </p>
+            <p className="text-sm font-medium text-[var(--text-primary)]">{t("seo")}</p>
             <p className="text-xs text-blue-400">{t("seoValue")}</p>
           </div>
         </div>
       </motion.div>
 
-      {/* Automation Badge - Bottom Left → Move diagonal ↙ (esquerda-baixo) */}
+      {/* Automation Badge - Bottom Left */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{
@@ -229,15 +221,13 @@ export function HeroVisual() {
             </svg>
           </div>
           <div>
-            <p className="text-sm font-medium text-[var(--text-primary)]">
-              {t("automation")}
-            </p>
+            <p className="text-sm font-medium text-[var(--text-primary)]">{t("automation")}</p>
             <p className="text-xs text-purple-400">{t("automationValue")}</p>
           </div>
         </div>
       </motion.div>
 
-      {/* New Lead Notification - Bottom Right → Move diagonal ↘ (direita-baixo) */}
+      {/* New Lead Notification - Bottom Right */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{
@@ -284,12 +274,10 @@ export function HeroVisual() {
           </div>
           <div>
             <p className="text-xs text-[var(--text-muted)]">{t("newLead")}</p>
-            <p className="text-sm font-medium text-[var(--text-primary)]">
-              {t("newClient")}
-            </p>
+            <p className="text-sm font-medium text-[var(--text-primary)]">{t("newClient")}</p>
           </div>
         </div>
       </motion.div>
     </div>
-  );
+  )
 }

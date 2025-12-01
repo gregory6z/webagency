@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "The problem",
+  "title": "Is your business invisible online?",
+  "subtitle": "Do these problems sound familiar?",
+  "problems": {
+    "invisible": {
+      "stat": "88%",
+      "statLabel": "search on Google",
+      "title": "Invisible on Google",
+      "description": "If you don't show up, your competitor does"
+    },
+    "slow": {
+      "stat": "3s",
+      "statLabel": "to lose a customer",
+      "title": "Slow or missing website",
+      "description": "Customers abandon slow-loading sites"
+    },
+    "offline": {
+      "stat": "24/7",
+      "statLabel": "customers search online",
+      "title": "Closed after hours",
+      "description": "How many customers do you lose at 10pm?"
+    },
+    "manual": {
+      "stat": "10h+",
+      "statLabel": "wasted per week",
+      "title": "Repetitive manual tasks",
+      "description": "Hours answering the same questions"
+    }
+  },
+  "cta": {
+    "text": "We have the solution",
+    "ariaLabel": "See our solutions"
+  }
+}
