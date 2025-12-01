@@ -216,6 +216,46 @@ Consultar `docs/PLANO-ESTRATEGICO.md` para conteúdo detalhado:
 - **NEVER** adicionar preços no site
 - **NEVER** usar ESLint ou Prettier
 
+## Agentes Obrigatórios
+
+### @smart-search - Buscas Web
+**SEMPRE usar o agente `smart-search` para buscas na web.**
+
+Invocar com Task tool (subagent_type: "smart-search") quando:
+- Pesquisar documentação, tutoriais, exemplos
+- Buscar inspiração de design ou UI
+- Verificar informações técnicas atualizadas
+- Extrair conteúdo de URLs
+- Qualquer busca na internet
+
+O agente gerencia automaticamente as quotas:
+- Brave: 2.000/mês
+- Tavily: 1.000/mês
+- Firecrawl: 500/mês
+
+### @translator - Traduções i18n
+**SEMPRE usar o agente `translator` para traduções.**
+
+Invocar com Task tool (subagent_type: "translator") quando:
+- Adicionar novos textos ao site
+- Criar novas chaves de tradução
+- Atualizar textos existentes
+- Criar novo módulo de tradução
+
+O agente garante:
+- Tradução para os 4 idiomas (FR, EN, PT, ES)
+- Mesma estrutura JSON em todos os arquivos
+- Tom adequado para agência web
+- Atualização do index.ts quando necessário
+
+### Context7 - Documentação de Libs
+**Usar Context7 ANTES de buscar na web** para documentação de:
+- Next.js, React, TypeScript
+- Tailwind CSS, Framer Motion
+- next-intl, outras libs do projeto
+
+Context7 não consome quota de busca e tem docs atualizadas.
+
 ## Documentation
 
 - `docs/PLANO-ESTRATEGICO.md` - Conteúdo e estratégia por seção

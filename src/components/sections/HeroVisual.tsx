@@ -1,21 +1,22 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-// Delays sequenciais: cada badge move após o anterior (em segundos)
+// Animação sequencial: um badge por vez
+// Duração 4s + espaço 6s entre cada = ciclo total ~24s
 const badgeDelays = {
-  speed: 1.5, // Primeiro a mover
-  seo: 5.5, // Move depois de 4s do primeiro
-  automation: 9.5, // Move depois de 4s do segundo
-  lead: 13.5, // Move depois de 4s do terceiro
-}
+  speed: 1,
+  seo: 7,
+  automation: 13,
+  lead: 19,
+};
 
 export function HeroVisual() {
-  const t = useTranslations("hero.visual")
+  const t = useTranslations("hero.visual");
 
   return (
-    <div className="relative w-full h-[500px] lg:h-[580px] xl:h-[640px]">
+    <div className="relative w-full h-[320px] sm:h-[340px] lg:h-[480px] xl:h-[520px]">
       {/* Glow background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(97,190,153,0.15)_0%,transparent_70%)] blur-[80px]" />
 
@@ -24,31 +25,41 @@ export function HeroVisual() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] lg:w-[400px] xl:w-[440px]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[280px] lg:w-[400px] xl:w-[440px]"
       >
-        <div className="bg-[var(--bg-secondary)] border border-[var(--border-dark)] rounded-2xl p-5 lg:p-6 xl:p-8 shadow-2xl">
+        <div className="bg-[var(--bg-secondary)] border border-[var(--border-dark)] rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 xl:p-8 shadow-2xl">
           {/* Header */}
-          <div className="flex items-center gap-2 mb-5">
-            <div className="w-3 h-3 rounded-full bg-red-500/80" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-            <div className="w-3 h-3 rounded-full bg-green-500/80" />
-            <span className="ml-2 text-xs text-[var(--text-muted)]">{t("dashboard")}</span>
+          <div className="flex items-center gap-1.5 lg:gap-2 mb-3 lg:mb-5">
+            <div className="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-red-500/80" />
+            <div className="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-yellow-500/80" />
+            <div className="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-green-500/80" />
+            <span className="ml-1.5 lg:ml-2 text-[10px] lg:text-xs text-[var(--text-muted)]">
+              {t("dashboard")}
+            </span>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-4 mb-5">
-            <div className="bg-[var(--bg-tertiary)] rounded-xl p-4">
-              <p className="text-xs text-[var(--text-muted)] mb-1">{t("visitors")}</p>
-              <p className="text-xl lg:text-2xl font-semibold text-[var(--accent)]">+247%</p>
+          <div className="grid grid-cols-2 gap-2 lg:gap-4 mb-3 lg:mb-5">
+            <div className="bg-[var(--bg-tertiary)] rounded-lg lg:rounded-xl p-2.5 lg:p-4">
+              <p className="text-[10px] lg:text-xs text-[var(--text-muted)] mb-0.5 lg:mb-1">
+                {t("visitors")}
+              </p>
+              <p className="text-base lg:text-2xl font-semibold text-[var(--accent)]">
+                +247%
+              </p>
             </div>
-            <div className="bg-[var(--bg-tertiary)] rounded-xl p-4">
-              <p className="text-xs text-[var(--text-muted)] mb-1">{t("conversions")}</p>
-              <p className="text-xl lg:text-2xl font-semibold text-[var(--text-primary)]">1,429</p>
+            <div className="bg-[var(--bg-tertiary)] rounded-lg lg:rounded-xl p-2.5 lg:p-4">
+              <p className="text-[10px] lg:text-xs text-[var(--text-muted)] mb-0.5 lg:mb-1">
+                {t("conversions")}
+              </p>
+              <p className="text-base lg:text-2xl font-semibold text-[var(--text-primary)]">
+                1,429
+              </p>
             </div>
           </div>
 
           {/* Chart */}
-          <div className="bg-[var(--bg-tertiary)] rounded-xl p-4 h-24 lg:h-28 xl:h-32 flex items-end gap-1.5">
+          <div className="bg-[var(--bg-tertiary)] rounded-lg lg:rounded-xl p-2.5 lg:p-4 h-16 lg:h-28 xl:h-32 flex items-end gap-1 lg:gap-1.5">
             {[40, 65, 45, 80, 55, 90, 70, 85, 95].map((h) => (
               <motion.div
                 key={h}
@@ -67,27 +78,27 @@ export function HeroVisual() {
         initial={{ opacity: 0, x: 40 }}
         animate={{
           opacity: 1,
-          x: [0, 6, 0],
-          y: [0, -6, 0],
+          x: [0, 12, 0],
+          y: [0, -12, 0],
         }}
         transition={{
           opacity: { duration: 0.8, delay: 0.4 },
           x: {
-            duration: 3.5,
+            duration: 4,
             delay: badgeDelays.speed,
             repeat: Infinity,
-            repeatDelay: 14,
+            repeatDelay: 20,
             ease: "easeInOut",
           },
           y: {
-            duration: 3.5,
+            duration: 4,
             delay: badgeDelays.speed,
             repeat: Infinity,
-            repeatDelay: 14,
+            repeatDelay: 20,
             ease: "easeInOut",
           },
         }}
-        className="absolute top-[8%] right-[0%] lg:top-[10%] lg:right-[-5%] xl:right-[-8%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 shadow-2xl"
+        className="absolute top-[0%] right-[5%] lg:top-[5%] lg:right-[-12%] xl:right-[-15%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-2xl scale-[0.65] lg:scale-100 origin-top-right"
       >
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-full bg-[var(--accent)]/20 flex items-center justify-center">
@@ -108,7 +119,9 @@ export function HeroVisual() {
             </svg>
           </div>
           <div>
-            <p className="text-sm font-medium text-[var(--text-primary)]">{t("speed")}</p>
+            <p className="text-sm font-medium text-[var(--text-primary)]">
+              {t("speed")}
+            </p>
             <p className="text-xs text-[var(--accent)]">{t("speedValue")}</p>
           </div>
         </div>
@@ -120,28 +133,28 @@ export function HeroVisual() {
         animate={{
           opacity: 1,
           scale: 1,
-          x: [0, -6, 0],
-          y: [0, -6, 0],
+          x: [0, -12, 0],
+          y: [0, -12, 0],
         }}
         transition={{
           opacity: { duration: 0.8, delay: 0.8 },
           scale: { duration: 0.8, delay: 0.8 },
           x: {
-            duration: 3.5,
+            duration: 4,
             delay: badgeDelays.seo,
             repeat: Infinity,
-            repeatDelay: 14,
+            repeatDelay: 20,
             ease: "easeInOut",
           },
           y: {
-            duration: 3.5,
+            duration: 4,
             delay: badgeDelays.seo,
             repeat: Infinity,
-            repeatDelay: 14,
+            repeatDelay: 20,
             ease: "easeInOut",
           },
         }}
-        className="absolute top-[18%] left-[0%] lg:top-[15%] lg:left-[-5%] xl:left-[-8%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 shadow-2xl"
+        className="absolute top-[0%] left-[5%] lg:top-[8%] lg:left-[-12%] xl:left-[-15%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-2xl scale-[0.65] lg:scale-100 origin-top-left"
       >
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-full bg-blue-500/20 flex items-center justify-center">
@@ -162,7 +175,9 @@ export function HeroVisual() {
             </svg>
           </div>
           <div>
-            <p className="text-sm font-medium text-[var(--text-primary)]">{t("seo")}</p>
+            <p className="text-sm font-medium text-[var(--text-primary)]">
+              {t("seo")}
+            </p>
             <p className="text-xs text-blue-400">{t("seoValue")}</p>
           </div>
         </div>
@@ -173,27 +188,27 @@ export function HeroVisual() {
         initial={{ opacity: 0, x: -40 }}
         animate={{
           opacity: 1,
-          x: [0, -6, 0],
-          y: [0, 6, 0],
+          x: [0, -12, 0],
+          y: [0, 12, 0],
         }}
         transition={{
           opacity: { duration: 0.8, delay: 0.6 },
           x: {
-            duration: 3.5,
+            duration: 4,
             delay: badgeDelays.automation,
             repeat: Infinity,
-            repeatDelay: 14,
+            repeatDelay: 20,
             ease: "easeInOut",
           },
           y: {
-            duration: 3.5,
+            duration: 4,
             delay: badgeDelays.automation,
             repeat: Infinity,
-            repeatDelay: 14,
+            repeatDelay: 20,
             ease: "easeInOut",
           },
         }}
-        className="absolute bottom-[12%] left-[-5%] lg:bottom-[15%] lg:left-[-8%] xl:left-[-10%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 shadow-2xl"
+        className="absolute bottom-[0%] left-[5%] lg:bottom-[8%] lg:left-[-15%] xl:left-[-18%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-2xl scale-[0.65] lg:scale-100 origin-bottom-left"
       >
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-full bg-purple-500/20 flex items-center justify-center">
@@ -214,7 +229,9 @@ export function HeroVisual() {
             </svg>
           </div>
           <div>
-            <p className="text-sm font-medium text-[var(--text-primary)]">{t("automation")}</p>
+            <p className="text-sm font-medium text-[var(--text-primary)]">
+              {t("automation")}
+            </p>
             <p className="text-xs text-purple-400">{t("automationValue")}</p>
           </div>
         </div>
@@ -225,27 +242,27 @@ export function HeroVisual() {
         initial={{ opacity: 0, y: 20 }}
         animate={{
           opacity: 1,
-          x: [0, 6, 0],
-          y: [0, 6, 0],
+          x: [0, 12, 0],
+          y: [0, 12, 0],
         }}
         transition={{
           opacity: { duration: 0.8, delay: 1 },
           x: {
-            duration: 3.5,
+            duration: 4,
             delay: badgeDelays.lead,
             repeat: Infinity,
-            repeatDelay: 14,
+            repeatDelay: 20,
             ease: "easeInOut",
           },
           y: {
-            duration: 3.5,
+            duration: 4,
             delay: badgeDelays.lead,
             repeat: Infinity,
-            repeatDelay: 14,
+            repeatDelay: 20,
             ease: "easeInOut",
           },
         }}
-        className="absolute bottom-[8%] right-[5%] lg:bottom-[10%] lg:right-[0%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-[var(--accent)]/30 rounded-2xl p-4 shadow-2xl"
+        className="absolute bottom-[0%] right-[5%] lg:bottom-[5%] lg:right-[-8%] xl:right-[-12%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-[var(--accent)]/30 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-2xl scale-[0.65] lg:scale-100 origin-bottom-right"
       >
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-[var(--accent)] flex items-center justify-center">
@@ -267,10 +284,12 @@ export function HeroVisual() {
           </div>
           <div>
             <p className="text-xs text-[var(--text-muted)]">{t("newLead")}</p>
-            <p className="text-sm font-medium text-[var(--text-primary)]">{t("newClient")}</p>
+            <p className="text-sm font-medium text-[var(--text-primary)]">
+              {t("newClient")}
+            </p>
           </div>
         </div>
       </motion.div>
     </div>
-  )
+  );
 }

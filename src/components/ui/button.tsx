@@ -2,7 +2,6 @@
 
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { motion } from "framer-motion"
 import type * as React from "react"
 
 import { cn } from "@/lib/utils"
@@ -27,7 +26,8 @@ const buttonVariants = cva(
         sm: "h-9 px-5 py-2 text-sm rounded-full gap-2",
         lg: "h-12 px-7 py-3 text-base rounded-full gap-3",
         xl: "h-16 pl-10 pr-3 py-3 text-lg rounded-full gap-4",
-        cta: "h-16 pl-10 pr-3 py-3 text-[18px] rounded-full",
+        // CTA: 52px mobile (thumb-friendly), 64px desktop
+        cta: "h-[52px] sm:h-16 pl-8 sm:pl-10 pr-2 sm:pr-3 py-3 text-base sm:text-[18px] rounded-full",
         icon: "size-10 rounded-full",
       },
     },
@@ -82,10 +82,7 @@ function Button({
     return (
       <button
         data-slot="button"
-        className={cn(
-          buttonVariants({ variant, size: "cta", className }),
-          "group",
-        )}
+        className={cn(buttonVariants({ variant, size: "cta", className }), "group")}
         {...props}
       >
         {/* Ping effect */}
@@ -96,11 +93,11 @@ function Button({
           />
         )}
 
-        <span className="relative z-10 flex items-center gap-8">
+        <span className="relative z-10 flex items-center gap-4 sm:gap-8">
           <span className="font-semibold">{children}</span>
 
-          {/* Círculo 40x40 com seta 16x16 - rotaciona de → para ↗ no hover */}
-          <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--bg-primary)]">
+          {/* Círculo com seta - 36px mobile, 40px desktop */}
+          <span className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--bg-primary)]">
             <ArrowIcon className="text-[var(--text-primary)] transition-transform duration-300 group-hover:-rotate-45" />
           </span>
         </span>

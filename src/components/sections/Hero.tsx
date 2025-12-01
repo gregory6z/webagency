@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
-import { Button } from "@/components/ui/button"
-import { HeroVisual } from "./HeroVisual"
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
+import { HeroVisual } from "./HeroVisual";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -16,30 +16,32 @@ const fadeUp = {
       ease: [0.25, 0.1, 0.25, 1] as const,
     },
   }),
-}
+};
 
 export function Hero() {
-  const t = useTranslations("hero")
+  const t = useTranslations("hero");
 
   return (
-    <section className="relative h-[calc(100vh-72px)] flex items-center overflow-hidden">
+    <section className="relative lg:h-[calc(100dvh-72px)] flex items-center justify-center overflow-hidden">
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20 xl:px-24 py-24 md:py-32 lg:py-40">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 xl:gap-16 items-center">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20 xl:px-24 pt-40 pb-12 md:py-24 lg:py-28">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-12 xl:gap-16 items-center">
           {/* Left side - Content */}
           <div className="text-center lg:text-left">
-            {/* Badge */}
+            {/* Badge - Desktop only */}
             <motion.div
               custom={0}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="inline-flex items-center gap-2 px-4 py-2 mb-6 md:mb-8 rounded-full border border-[var(--border-dark)] bg-[var(--bg-secondary)]"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full border border-border-dark bg-bg-secondary"
             >
-              <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse" />
-              <span className="text-sm text-[var(--text-secondary)]">{t("badge")}</span>
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span className="text-sm text-[var(--text-secondary)]">
+                {t("badge")}
+              </span>
             </motion.div>
 
             {/* Title - Desktop */}
@@ -53,13 +55,13 @@ export function Hero() {
               {t("title")}
             </motion.h1>
 
-            {/* Title - Mobile */}
+            {/* Title - Mobile: Estilo UI Academy */}
             <motion.h1
-              custom={0.1}
+              custom={0}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="md:hidden font-heading text-[32px] sm:text-[40px] font-semibold leading-[1.12] tracking-[-0.02em] mb-5"
+              className="md:hidden font-heading text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] mb-6"
             >
               {t("titleMobile")}
             </motion.h1>
@@ -80,43 +82,44 @@ export function Hero() {
               </p>
             </motion.div>
 
-            {/* Subtitle - Mobile */}
+            {/* Subtitle - Mobile: Direto, sem subtitleShort */}
+            <motion.p
+              custom={0.1}
+              initial="hidden"
+              animate="visible"
+              variants={fadeUp}
+              className="md:hidden text-base text-text-secondary leading-relaxed mb-10"
+            >
+              {t("subtitleMobile")}
+            </motion.p>
+
+            {/* CTA - Mobile: Único, destacado */}
             <motion.div
               custom={0.2}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="md:hidden max-w-md mx-auto lg:mx-0 mb-8"
+              className="md:hidden"
             >
-              <p className="text-xs text-[var(--text-muted)] mb-2">
-                {t("subtitleShort")}
-              </p>
-              <p className="text-lg text-[var(--text-primary)] leading-relaxed">
-                {t("subtitleMobile")}
-              </p>
+              <Button variant="cta" withArrow className="w-full max-w-[300px]">
+                {t("cta.primaryMobile")}
+              </Button>
             </motion.div>
 
-            {/* CTAs */}
+            {/* CTAs - Desktop */}
             <motion.div
               custom={0.3}
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4"
+              className="hidden md:flex flex-row items-center lg:items-start justify-center lg:justify-start gap-4"
             >
-              {/* Primary CTA - Desktop */}
-              <Button variant="cta" withArrow className="hidden sm:inline-flex">
+              <Button variant="cta" withArrow>
                 {t("cta.primary")}
               </Button>
-              {/* Primary CTA - Mobile */}
-              <Button variant="cta" withArrow className="sm:hidden w-full max-w-xs">
-                {t("cta.primaryMobile")}
-              </Button>
-
-              {/* Secondary - Link âncora */}
               <a
                 href="#services"
-                className="h-16 inline-flex items-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300"
+                className="h-16 inline-flex items-center text-text-secondary hover:text-text-primary transition-colors duration-300"
               >
                 {t("cta.secondary")}
               </a>
@@ -128,18 +131,18 @@ export function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeUp}
-              className="mt-10 lg:mt-12 text-sm text-[var(--text-muted)]"
+              className="mt-10 md:mt-10 lg:mt-12 text-sm text-text-muted"
             >
               {t("socialProof")}
             </motion.p>
           </div>
 
           {/* Right side - Visual */}
-          <div className="hidden lg:block">
+          <div className="mt-8 lg:mt-0">
             <HeroVisual />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
