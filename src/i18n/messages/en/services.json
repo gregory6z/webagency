@@ -1,0 +1,46 @@
+{
+  "title": "Complete digital solutions for your business",
+  "subtitle": "From showcase site to total automation",
+  "items": {
+    "landingPage": {
+      "title": "Landing Pages",
+      "description": "Conversion pages optimized to capture clients 24/7"
+    },
+    "website": {
+      "title": "Institutional Websites",
+      "description": "Complete professional presence with multiple pages"
+    },
+    "ecommerce": {
+      "title": "Online Stores",
+      "description": "Sell your products 24/7 with automatic payment"
+    },
+    "chatbot": {
+      "title": "Intelligent Chatbot",
+      "description": "Robot that answers your clients 24/7"
+    },
+    "booking": {
+      "title": "Online Booking",
+      "description": "Clients book by themselves, like Doctolib"
+    },
+    "whatsapp": {
+      "title": "Professional WhatsApp",
+      "description": "Automatic confirmation and follow-up messages"
+    },
+    "email": {
+      "title": "Email Marketing",
+      "description": "Automatic campaigns that retain your clients"
+    },
+    "crm": {
+      "title": "CRM - Client Management",
+      "description": "All your clients and sales organized in one place"
+    },
+    "quotes": {
+      "title": "Automatic Quotes",
+      "description": "Create professional quotes in a few clicks"
+    },
+    "automation": {
+      "title": "Automation",
+      "description": "The system works while you sleep"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "navigation": {
+    "home": "Início",
+    "services": "Serviços",
+    "contact": "Contato"
+  },
+  "cta": {
+    "getQuote": "Obter meu orçamento grátis",
+    "learnMore": "Saiba mais",
+    "contact": "Fale conosco",
+    "startProject": "Começar meu projeto"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "madeWith": "Feito com",
+    "in": "em Marseille"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Dale poder digital a tu empresa",
+  "titleMobile": "Poder digital para tu empresa",
+  "subtitleShort": "Para profesionales y empresas locales:",
+  "subtitle": "Sitios web de alto rendimiento que convierten tus visitantes en clientes, con la tecnología de los gigantes del web",
+  "subtitleMobile": "Sitios de alto rendimiento que convierten visitantes en clientes",
+  "badge": "Agencia web en Marseille & Aubagne",
+  "cta": {
+    "primary": "Habla con un experto",
+    "primaryMobile": "Experto",
+    "secondary": "Ver nuestras soluciones",
+    "secondaryMobile": "Soluciones"
+  },
+  "socialProof": "La misma tecnología que Netflix, Uber, Nike",
+  "visual": {
+    "dashboard": "Tu panel",
+    "visitors": "Visitantes",
+    "conversions": "Conversiones",
+    "speed": "Velocidad",
+    "speedValue": "10x más rápido",
+    "seo": "SEO",
+    "seoValue": "1º en Google",
+    "automation": "Automatización",
+    "automationValue": "Trabaja 24/7",
+    "newLead": "Nuevo lead",
+    "newClient": "+1 cliente"
+  }
+}

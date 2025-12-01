@@ -1,0 +1,18 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "cta": {
+    "getQuote": "Get my free quote",
+    "learnMore": "Learn more",
+    "contact": "Contact us",
+    "startProject": "Start my project"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "in": "in Marseille"
+  }
+}

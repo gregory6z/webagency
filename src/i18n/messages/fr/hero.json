@@ -1,0 +1,28 @@
+{
+  "title": "Donnez une puissance digitale à votre entreprise",
+  "titleMobile": "Puissance digitale pour votre entreprise",
+  "subtitleShort": "Pour professionnels et entreprises locales:",
+  "subtitle": "Des sites web performants qui transforment vos visiteurs en clients, avec la technologie des géants du web",
+  "subtitleMobile": "Sites performants qui convertissent vos visiteurs en clients",
+  "badge": "Agence web à Marseille & Aubagne",
+  "cta": {
+    "primary": "Parlez à un expert",
+    "primaryMobile": "Expert",
+    "secondary": "Voir nos solutions",
+    "secondaryMobile": "Solutions"
+  },
+  "socialProof": "La même technologie que Netflix, Uber, Nike",
+  "visual": {
+    "dashboard": "Votre tableau de bord",
+    "visitors": "Visiteurs",
+    "conversions": "Conversions",
+    "speed": "Vitesse",
+    "speedValue": "10x plus rapide",
+    "seo": "SEO",
+    "seoValue": "1er sur Google",
+    "automation": "Automatisation",
+    "automationValue": "Fonctionne 24/7",
+    "newLead": "Nouveau lead",
+    "newClient": "+1 client"
+  }
+}

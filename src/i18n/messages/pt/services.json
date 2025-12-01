@@ -1,0 +1,46 @@
+{
+  "title": "Soluções digitais completas para sua empresa",
+  "subtitle": "Do site básico à automação total",
+  "items": {
+    "landingPage": {
+      "title": "Landing Pages",
+      "description": "Páginas de conversão otimizadas para capturar clientes 24h"
+    },
+    "website": {
+      "title": "Sites Institucionais",
+      "description": "Presença profissional completa com múltiplas páginas"
+    },
+    "ecommerce": {
+      "title": "Lojas Virtuais",
+      "description": "Venda seus produtos 24h com pagamento automático"
+    },
+    "chatbot": {
+      "title": "Chatbot Inteligente",
+      "description": "Robô que responde seus clientes 24h"
+    },
+    "booking": {
+      "title": "Agendamento Online",
+      "description": "Clientes agendam sozinhos, como Doctolib"
+    },
+    "whatsapp": {
+      "title": "WhatsApp Profissional",
+      "description": "Mensagens automáticas de confirmação e acompanhamento"
+    },
+    "email": {
+      "title": "Email Marketing",
+      "description": "Campanhas automáticas que fidelizam seus clientes"
+    },
+    "crm": {
+      "title": "CRM - Gestão de Clientes",
+      "description": "Todos seus clientes e vendas organizados em um só lugar"
+    },
+    "quotes": {
+      "title": "Orçamentos Automáticos",
+      "description": "Crie orçamentos profissionais em poucos cliques"
+    },
+    "automation": {
+      "title": "Automação",
+      "description": "O sistema trabalha enquanto você dorme"
+    }
+  }
+}
