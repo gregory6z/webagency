@@ -7,25 +7,25 @@
       "stat": "88%",
       "statLabel": "search on Google",
       "title": "Invisible on Google",
-      "description": "If you don't show up, your competitor does"
-    },
-    "slow": {
-      "stat": "3s",
-      "statLabel": "to lose a customer",
-      "title": "Slow or missing website",
-      "description": "Customers abandon slow-loading sites"
+      "description": "Your customers are searching, but finding your competitors"
     },
     "offline": {
       "stat": "24/7",
-      "statLabel": "customers search online",
-      "title": "Closed after hours",
-      "description": "How many customers do you lose at 10pm?"
+      "statLabel": "customers are searching",
+      "title": "Closed when they need you",
+      "description": "They search at 10pm, but no one answers"
     },
     "manual": {
       "stat": "10h+",
       "statLabel": "wasted per week",
       "title": "Repetitive manual tasks",
-      "description": "Hours answering the same questions"
+      "description": "Hours spent on tasks a system could handle"
+    },
+    "presence": {
+      "stat": "73%",
+      "statLabel": "judge by website",
+      "title": "No professional presence",
+      "description": "Without a modern site, you lose credibility"
     }
   },
   "cta": {
