@@ -17,6 +17,7 @@
   /* Accent - Verde */
   --accent: #61be99;
   --accent-hover: #4fa882;
+  --accent-dark: #3d9d78; /* Para fundos claros */
 
   /* Borders */
   --border-light: #ced4d7;
@@ -62,6 +63,7 @@
   --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
+  --color-accent-dark: var(--accent-dark);
   --color-border-light: var(--border-light);
   --color-border-dark: var(--border-dark);
 
