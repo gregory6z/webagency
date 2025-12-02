@@ -93,8 +93,24 @@ export function Process() {
         </div>
 
         {/* Highlight Banner */}
-        <div className="text-center p-6 rounded-2xl bg-white shadow-sm border border-gray-200/60">
-          <p className="text-lg font-medium text-gray-900">{t("highlight")}</p>
+        <div className="relative overflow-hidden rounded-2xl bg-accent p-8 lg:p-10">
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
+          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+                <Search className="w-7 h-7 text-white" strokeWidth={1.5} />
+              </div>
+              <p className="text-xl lg:text-2xl font-heading font-semibold text-white">
+                {t("highlight")}
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-accent font-semibold rounded-full hover:bg-white/90 transition-colors duration-300 shadow-lg"
+            >
+              {t("cta")}
+            </a>
+          </div>
         </div>
       </div>
     </section>
