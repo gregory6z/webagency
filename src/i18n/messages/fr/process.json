@@ -1,0 +1,28 @@
+{
+  "sectionLabel": "Processus",
+  "title": "Comment ça marche ?",
+  "subtitle": "Un processus simple en 4 étapes",
+  "steps": {
+    "discovery": {
+      "title": "Découverte",
+      "description": "Réunion gratuite pour comprendre vos besoins",
+      "duration": "30 minutes"
+    },
+    "proposal": {
+      "title": "Proposition",
+      "description": "Devis détaillé sans engagement",
+      "duration": "48 heures"
+    },
+    "creation": {
+      "title": "Création",
+      "description": "Développement avec validations régulières",
+      "duration": "Sur mesure"
+    },
+    "launch": {
+      "title": "Lancement",
+      "description": "Mise en ligne et formation",
+      "duration": "Support continu"
+    }
+  },
+  "highlight": "Première réunion GRATUITE et sans engagement"
+}

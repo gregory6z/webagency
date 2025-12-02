@@ -1,0 +1,28 @@
+{
+  "sectionLabel": "Proceso",
+  "title": "¿Cómo funciona?",
+  "subtitle": "Un proceso simple en 4 pasos",
+  "steps": {
+    "discovery": {
+      "title": "Descubrimiento",
+      "description": "Reunión gratuita para entender sus necesidades",
+      "duration": "30 minutos"
+    },
+    "proposal": {
+      "title": "Propuesta",
+      "description": "Presupuesto detallado sin compromiso",
+      "duration": "48 horas"
+    },
+    "creation": {
+      "title": "Creación",
+      "description": "Desarrollo con validaciones regulares",
+      "duration": "A medida"
+    },
+    "launch": {
+      "title": "Lanzamiento",
+      "description": "Publicación y formación",
+      "duration": "Soporte continuo"
+    }
+  },
+  "highlight": "Primera reunión GRATIS y sin compromiso"
+}

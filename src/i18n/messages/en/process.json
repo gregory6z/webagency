@@ -1,0 +1,28 @@
+{
+  "sectionLabel": "Process",
+  "title": "How does it work?",
+  "subtitle": "A simple 4-step process",
+  "steps": {
+    "discovery": {
+      "title": "Discovery",
+      "description": "Free meeting to understand your needs",
+      "duration": "30 minutes"
+    },
+    "proposal": {
+      "title": "Proposal",
+      "description": "Detailed quote with no commitment",
+      "duration": "48 hours"
+    },
+    "creation": {
+      "title": "Creation",
+      "description": "Development with regular validations",
+      "duration": "Tailored"
+    },
+    "launch": {
+      "title": "Launch",
+      "description": "Go live and training",
+      "duration": "Ongoing support"
+    }
+  },
+  "highlight": "First meeting FREE with no commitment"
+}
