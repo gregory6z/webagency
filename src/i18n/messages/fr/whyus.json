@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "Pourquoi nous choisir",
+  "title": "Une agence à vos côtés, pas juste un prestataire",
+  "subtitle": "Ce qui fait la différence quand vous travaillez avec nous",
+  "items": {
+    "tech": {
+      "title": "Technologie de Pointe",
+      "description": "Next.js - La même technologie que Netflix, Uber et Nike. Des sites 10x plus rapides que la concurrence."
+    },
+    "results": {
+      "title": "Focus sur les Résultats",
+      "description": "Nous ne vendons pas des sites, nous générons des clients. Chaque projet est pensé pour développer votre business."
+    },
+    "support": {
+      "title": "Support Continu",
+      "description": "Nous ne vous abandonnons pas après la livraison. Support technique inclus et accompagnement dans la durée."
+    },
+    "transparency": {
+      "title": "Sans Surprises",
+      "description": "Prix fixe défini à l'avance, sans coûts cachés. Délais respectés et communication transparente."
+    },
+    "local": {
+      "title": "Experts Locaux",
+      "description": "Nous connaissons le marché de Marseille et Aubagne. SEO optimisé pour votre région et vos clients."
+    },
+    "guarantee": {
+      "title": "Garantie Satisfaction",
+      "description": "90 jours pour les ajustements après livraison. Votre code source vous appartient à 100%."
+    }
+  },
+  "cta": {
+    "text": "Parlons de votre projet",
+    "ariaLabel": "Aller au formulaire de contact"
+  }
+}

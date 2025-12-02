@@ -1,0 +1,29 @@
+{
+  "sectionLabel": "Nossa expertise",
+  "title": "Tecnologias de ponta para resultados concretos",
+  "subtitle": "Usamos as mesmas ferramentas dos gigantes da web para criar seu site",
+  "stats": {
+    "speed": {
+      "value": "<1s",
+      "label": "Tempo de carregamento"
+    },
+    "score": {
+      "value": "100",
+      "label": "Score Google PageSpeed"
+    },
+    "security": {
+      "value": "A+",
+      "label": "Nota segurança SSL"
+    },
+    "support": {
+      "value": "48h",
+      "label": "Tempo de resposta máx"
+    }
+  },
+  "techTitle": "Impulsionado pelas melhores tecnologias",
+  "companies": "A mesma tecnologia de",
+  "cta": {
+    "text": "Pedir orçamento grátis",
+    "ariaLabel": "Ir para formulário de contato"
+  }
+}

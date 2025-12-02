@@ -1,0 +1,29 @@
+{
+  "sectionLabel": "Notre expertise",
+  "title": "Technologies de pointe pour des résultats concrets",
+  "subtitle": "Nous utilisons les mêmes outils que les géants du web pour créer votre site",
+  "stats": {
+    "speed": {
+      "value": "<1s",
+      "label": "Temps de chargement"
+    },
+    "score": {
+      "value": "100",
+      "label": "Score Google PageSpeed"
+    },
+    "security": {
+      "value": "A+",
+      "label": "Note sécurité SSL"
+    },
+    "support": {
+      "value": "48h",
+      "label": "Délai de réponse max"
+    }
+  },
+  "techTitle": "Propulsé par les meilleures technologies",
+  "companies": "La même technologie que",
+  "cta": {
+    "text": "Demander un devis gratuit",
+    "ariaLabel": "Aller au formulaire de contact"
+  }
+}

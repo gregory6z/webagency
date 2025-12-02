@@ -1,0 +1,35 @@
+{
+  "description": "Web agency specialized in creating high-performance websites with tomorrow's technologies.",
+  "sections": {
+    "services": {
+      "title": "Services",
+      "items": {
+        "landing": "Landing Pages",
+        "sites": "Business Websites",
+        "ecommerce": "Online Stores",
+        "automation": "Automation"
+      }
+    },
+    "company": {
+      "title": "Company",
+      "items": {
+        "about": "About",
+        "process": "Our process",
+        "contact": "Contact"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "contact@websignature.fr",
+      "phone": "+33 6 00 00 00 00",
+      "location": "Marseille / Aubagne, France"
+    }
+  },
+  "legal": {
+    "mentions": "Legal notices",
+    "privacy": "Privacy policy"
+  },
+  "copyright": "All rights reserved.",
+  "madeWith": "Made with",
+  "in": "in Marseille"
+}

@@ -1,0 +1,29 @@
+{
+  "sectionLabel": "Nuestra experiencia",
+  "title": "Tecnologías de vanguardia para resultados concretos",
+  "subtitle": "Usamos las mismas herramientas que los gigantes de la web para crear tu sitio",
+  "stats": {
+    "speed": {
+      "value": "<1s",
+      "label": "Tiempo de carga"
+    },
+    "score": {
+      "value": "100",
+      "label": "Score Google PageSpeed"
+    },
+    "security": {
+      "value": "A+",
+      "label": "Nota seguridad SSL"
+    },
+    "support": {
+      "value": "48h",
+      "label": "Tiempo de respuesta máx"
+    }
+  },
+  "techTitle": "Impulsado por las mejores tecnologías",
+  "companies": "La misma tecnología de",
+  "cta": {
+    "text": "Pedir presupuesto gratis",
+    "ariaLabel": "Ir al formulario de contacto"
+  }
+}

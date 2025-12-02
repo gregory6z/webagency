@@ -1,0 +1,29 @@
+{
+  "sectionLabel": "Our expertise",
+  "title": "Cutting-edge technologies for real results",
+  "subtitle": "We use the same tools as web giants to build your site",
+  "stats": {
+    "speed": {
+      "value": "<1s",
+      "label": "Load time"
+    },
+    "score": {
+      "value": "100",
+      "label": "Google PageSpeed Score"
+    },
+    "security": {
+      "value": "A+",
+      "label": "SSL Security Grade"
+    },
+    "support": {
+      "value": "48h",
+      "label": "Max response time"
+    }
+  },
+  "techTitle": "Powered by the best technologies",
+  "companies": "Same technology as",
+  "cta": {
+    "text": "Get a free quote",
+    "ariaLabel": "Go to contact form"
+  }
+}

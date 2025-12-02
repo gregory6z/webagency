@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "Por qué elegirnos",
+  "title": "Un socio a tu lado, no solo un proveedor",
+  "subtitle": "Lo que marca la diferencia cuando trabajas con nosotros",
+  "items": {
+    "tech": {
+      "title": "Tecnología de Vanguardia",
+      "description": "Next.js - La misma tecnología de Netflix, Uber y Nike. Sitios 10x más rápidos que la competencia."
+    },
+    "results": {
+      "title": "Enfoque en Resultados",
+      "description": "No vendemos sitios, generamos clientes. Cada proyecto está pensado para hacer crecer tu negocio."
+    },
+    "support": {
+      "title": "Soporte Continuo",
+      "description": "No te abandonamos después de la entrega. Soporte técnico incluido y acompañamiento a largo plazo."
+    },
+    "transparency": {
+      "title": "Sin Sorpresas",
+      "description": "Precio fijo definido de antemano, sin costos ocultos. Plazos respetados y comunicación transparente."
+    },
+    "local": {
+      "title": "Expertos Locales",
+      "description": "Conocemos el mercado de Marseille y Aubagne. SEO optimizado para tu región y clientes."
+    },
+    "guarantee": {
+      "title": "Garantía de Satisfacción",
+      "description": "90 días para ajustes después de la entrega. Tu código fuente te pertenece 100%."
+    }
+  },
+  "cta": {
+    "text": "Hablemos de tu proyecto",
+    "ariaLabel": "Ir al formulario de contacto"
+  }
+}
