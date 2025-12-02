@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { renderHighlight } from "@/lib/highlight";
 import {
   SiNextdotjs,
   SiReact,
@@ -49,7 +50,7 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="font-heading text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-semibold leading-[1.03] tracking-[-0.02em] mb-8"
+            className="font-heading text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-semibold leading-[1.03] tracking-[-0.02em] mb-6 md:mb-10"
           >
             <span className="text-white">{t("titleLine1")}</span>
             <br />
@@ -58,16 +59,15 @@ export function Hero() {
             <span className="text-white">{t("titleLine2")}</span>
           </motion.h1>
 
-          {/* Subtitle - 20px */}
+          {/* Subtitle */}
           <motion.p
             custom={0.1}
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="text-lg md:text-xl text-gray-400 font-medium leading-[1.4] max-w-2xl"
+            className="text-xl md:text-2xl text-gray-400 font-medium leading-[1.5] max-w-2xl"
           >
-            {t("subtitle")}
-          </motion.p>
+            {renderHighlight(t.raw("subtitle"))}</motion.p>
         </div>
       </div>
 
