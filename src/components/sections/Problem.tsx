@@ -73,7 +73,7 @@ function ProblemCard({ problemKey }: { problemKey: (typeof problemKeys)[number] 
   const Icon = problemIcons[problemKey]
 
   return (
-    <div className="group relative p-6 lg:p-8 rounded-2xl bg-white border border-gray-100 hover:shadow-xl hover:shadow-accent/10 hover:border-accent/30 transition-all duration-300">
+    <div className="group relative p-6 lg:p-8 rounded-2xl bg-white shadow-sm border border-gray-200/60 hover:shadow-xl hover:shadow-accent/10 hover:border-accent/30 transition-all duration-300">
       {/* Icon */}
       <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
         <Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
@@ -106,17 +106,17 @@ export function Problem() {
   const t = useTranslations("problem")
 
   return (
-    <section className="relative bg-[#f8fafb] py-16 md:py-20 lg:py-24">
-      <div className="w-full max-w-[1216px] mx-auto px-6 md:px-10">
-        {/* Header - Centralizado */}
-        <div className="text-center mb-12 lg:mb-16">
+    <section className="relative bg-gray-50 py-16 md:py-20 lg:py-24">
+      <div className="w-full max-w-[1216px] mx-auto px-6 lg:px-0">
+        {/* Header - Alinhado à esquerda */}
+        <div className="mb-12 lg:mb-16">
           <span className="inline-block px-4 py-1.5 text-sm font-medium text-white bg-accent rounded-full mb-5">
             {t("sectionLabel")}
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-5 leading-tight max-w-3xl mx-auto">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-5 leading-tight max-w-3xl">
             {t("title")}
           </h2>
-          <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl">
             {t("subtitle")}
           </p>
         </div>

@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server"
 import { Differential } from "@/components/sections/Differential"
 import { Hero } from "@/components/sections/Hero"
 import { Problem } from "@/components/sections/Problem"
+import { Services } from "@/components/sections/Services"
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -16,6 +17,7 @@ export default async function Home({ params }: Props) {
       <Hero />
       <Problem />
       <Differential />
+      <Services />
     </main>
   )
 }
