@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import {
   SiAmazonwebservices,
@@ -88,19 +87,8 @@ export function SocialProof() {
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-bg-primary to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-bg-primary to-transparent z-10" />
 
-            {/* Scrolling container */}
-            <motion.div
-              className="flex"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                x: {
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "loop",
-                  duration: 40,
-                  ease: "linear",
-                },
-              }}
-            >
+            {/* Scrolling container - CSS animation for better mobile performance */}
+            <div className="flex animate-scroll">
               {/* First set */}
               {techLogos.map((tech) => (
                 <div
@@ -108,7 +96,7 @@ export function SocialProof() {
                   className="flex flex-col items-center gap-2 md:gap-3 mx-5 md:mx-10 flex-shrink-0"
                 >
                   <tech.icon
-                    className="w-8 h-8 md:w-12 md:h-12 text-white/40 hover:text-white/70 transition-colors"
+                    className="w-8 h-8 md:w-12 md:h-12 text-white/40"
                     aria-label={tech.name}
                   />
                   <span className="text-[10px] md:text-xs text-white/40">{tech.name}</span>
@@ -121,13 +109,13 @@ export function SocialProof() {
                   className="flex flex-col items-center gap-2 md:gap-3 mx-5 md:mx-10 flex-shrink-0"
                 >
                   <tech.icon
-                    className="w-8 h-8 md:w-12 md:h-12 text-white/40 hover:text-white/70 transition-colors"
+                    className="w-8 h-8 md:w-12 md:h-12 text-white/40"
                     aria-label={tech.name}
                   />
                   <span className="text-[10px] md:text-xs text-white/40">{tech.name}</span>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
