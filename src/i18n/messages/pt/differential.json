@@ -1,0 +1,73 @@
+{
+  "sectionLabel": "A diferença",
+  "title": "Seu site atual está te custando clientes",
+  "subtitle": "Enquanto você usa um template genérico, seus concorrentes roubam seus clientes",
+
+  "generic": {
+    "label": "Sites genéricos",
+    "items": {
+      "template": {
+        "title": "Copiado em 10.000 sites",
+        "description": "Seus clientes não te diferenciam da concorrência."
+      },
+      "wordpress": {
+        "title": "WordPress: lento, hackeado, obsoleto",
+        "description": "60% dos sites invadidos rodam WordPress."
+      },
+      "limited": {
+        "title": "Preso em um template",
+        "description": "O template decide. Não você."
+      },
+      "seo": {
+        "title": "Invisível no Google",
+        "description": "Seus clientes encontram seus concorrentes, não você."
+      }
+    }
+  },
+
+  "custom": {
+    "label": "Nossa abordagem",
+    "items": {
+      "unique": {
+        "title": "Exclusivo. Como sua marca.",
+        "description": "Criado só para você. Ninguém mais terá igual."
+      },
+      "nextjs": {
+        "title": "Tecnologia Netflix & Nike",
+        "description": "Next.js: ultra-rápido, blindado, zero compromisso."
+      },
+      "flexible": {
+        "title": "Seu negócio dita o design",
+        "description": "Cada pixel pensado para converter."
+      },
+      "seoReady": {
+        "title": "Google te adora",
+        "description": "Código limpo, velocidade máxima. Clientes chegam."
+      }
+    }
+  },
+
+  "stats": {
+    "speed": {
+      "value": "3x",
+      "label": "mais rápido"
+    },
+    "unique": {
+      "value": "100%",
+      "label": "único"
+    },
+    "security": {
+      "value": "0",
+      "label": "falhas"
+    },
+    "seo": {
+      "value": "#1",
+      "label": "no Google"
+    }
+  },
+
+  "cta": {
+    "text": "Descobrir nossos serviços",
+    "ariaLabel": "Ver nossos serviços"
+  }
+}

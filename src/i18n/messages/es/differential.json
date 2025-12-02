@@ -1,0 +1,73 @@
+{
+  "sectionLabel": "La diferencia",
+  "title": "Tu sitio actual te está costando clientes",
+  "subtitle": "Mientras usas una plantilla genérica, tus competidores roban tus clientes",
+
+  "generic": {
+    "label": "Sitios genéricos",
+    "items": {
+      "template": {
+        "title": "Copiado en 10.000 sitios",
+        "description": "Tus clientes no te distinguen de la competencia."
+      },
+      "wordpress": {
+        "title": "WordPress: lento, hackeado, obsoleto",
+        "description": "60% de los sitios hackeados usan WordPress."
+      },
+      "limited": {
+        "title": "Prisionero de una plantilla",
+        "description": "La plantilla decide. No tú."
+      },
+      "seo": {
+        "title": "Invisible en Google",
+        "description": "Tus clientes encuentran a tus competidores, no a ti."
+      }
+    }
+  },
+
+  "custom": {
+    "label": "Nuestro enfoque",
+    "items": {
+      "unique": {
+        "title": "Exclusivo. Como tu marca.",
+        "description": "Creado solo para ti. Nadie más lo tendrá."
+      },
+      "nextjs": {
+        "title": "Tecnología Netflix & Nike",
+        "description": "Next.js: ultra-rápido, blindado, cero compromisos."
+      },
+      "flexible": {
+        "title": "Tu negocio dicta el diseño",
+        "description": "Cada píxel pensado para convertir."
+      },
+      "seoReady": {
+        "title": "Google te adora",
+        "description": "Código limpio, velocidad máxima. Los clientes llegan."
+      }
+    }
+  },
+
+  "stats": {
+    "speed": {
+      "value": "3x",
+      "label": "más rápido"
+    },
+    "unique": {
+      "value": "100%",
+      "label": "único"
+    },
+    "security": {
+      "value": "0",
+      "label": "vulnerabilidades"
+    },
+    "seo": {
+      "value": "#1",
+      "label": "en Google"
+    }
+  },
+
+  "cta": {
+    "text": "Descubrir nuestros servicios",
+    "ariaLabel": "Ver nuestros servicios"
+  }
+}
