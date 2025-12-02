@@ -1,46 +1,57 @@
 {
-  "title": "Complete digital solutions for your business",
-  "subtitle": "From showcase site to total automation",
-  "items": {
-    "landingPage": {
-      "title": "Landing Pages",
-      "description": "Conversion pages optimized to capture clients 24/7"
+  "title": "Expertises",
+  "titleHighlight": "& Mastery",
+  "subtitle": "Tailored services <highlight>for your success</highlight>",
+  "uniqueTitle": "Every business is unique",
+  "uniqueDescription": "and every delivery is custom-made to generate <highlight>results</highlight> in digital.",
+  "categories": {
+    "strategy": {
+      "title": "Strategy",
+      "description": "<highlight>Strategic clarity</highlight> that positions your brand and highlights your offer.",
+      "items": {
+        "positioning": "Positioning",
+        "competition": "Competition analysis",
+        "audience": "Audience research",
+        "personas": "Personas",
+        "architecture": "Offer architecture",
+        "copywriting": "Persuasive copywriting"
+      }
     },
-    "website": {
-      "title": "Institutional Websites",
-      "description": "Complete professional presence with multiple pages"
+    "design": {
+      "title": "Design",
+      "description": "Interfaces that combine aesthetics, clarity and strategy — <highlight>made to convert</highlight>.",
+      "items": {
+        "artDirection": "Art direction",
+        "branding": "Premium visual identity",
+        "wireframes": "Wireframes and structures",
+        "uiDesign": "Conversion-focused UI",
+        "responsive": "100% responsive layouts",
+        "styleGuide": "Complete style guide"
+      }
     },
-    "ecommerce": {
-      "title": "Online Stores",
-      "description": "Sell your products 24/7 with automatic payment"
-    },
-    "chatbot": {
-      "title": "Intelligent Chatbot",
-      "description": "Robot that answers your clients 24/7"
-    },
-    "booking": {
-      "title": "Online Booking",
-      "description": "Clients book by themselves, like Doctolib"
-    },
-    "whatsapp": {
-      "title": "Professional WhatsApp",
-      "description": "Automatic confirmation and follow-up messages"
-    },
-    "email": {
-      "title": "Email Marketing",
-      "description": "Automatic campaigns that retain your clients"
-    },
-    "crm": {
-      "title": "CRM - Client Management",
-      "description": "All your clients and sales organized in one place"
-    },
-    "quotes": {
-      "title": "Automatic Quotes",
-      "description": "Create professional quotes in a few clicks"
+    "development": {
+      "title": "Development",
+      "description": "<highlight>Performant</highlight> sites, editable and ready to scale consistently.",
+      "items": {
+        "nextjs": "Next.js Expert",
+        "cms": "CMS Panel",
+        "integrations": "Automation integrations",
+        "performance": "Performance optimization",
+        "seo": "SEO configuration",
+        "testing": "Usability testing"
+      }
     },
     "automation": {
       "title": "Automation",
-      "description": "The system works while you sleep"
+      "description": "Save time with <highlight>automated processes</highlight> and intelligent workflows.",
+      "items": {
+        "workflows": "Automated workflows",
+        "crm": "CRM integration",
+        "analytics": "Analytics and tracking",
+        "notifications": "Automated notifications",
+        "apis": "API connections",
+        "ai": "Artificial intelligence"
+      }
     }
   }
 }

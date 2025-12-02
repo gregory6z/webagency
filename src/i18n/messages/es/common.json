@@ -1,14 +1,18 @@
 {
   "navigation": {
     "home": "Inicio",
+    "solution": "Solución",
     "services": "Servicios",
+    "process": "Metodología",
+    "about": "Acerca de",
     "contact": "Contacto"
   },
   "cta": {
-    "getQuote": "Obtener mi presupuesto gratis",
+    "getQuote": "Pedir mi presupuesto gratis",
     "learnMore": "Saber más",
     "contact": "Contáctanos",
-    "startProject": "Empezar mi proyecto"
+    "startProject": "Comenzar mi proyecto",
+    "schedule": "Agendar una llamada"
   },
   "footer": {
     "rights": "Todos los derechos reservados",

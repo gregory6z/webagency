@@ -48,45 +48,45 @@ export function SocialProof() {
   const t = useTranslations("socialproof")
 
   return (
-    <section id="social-proof" className="relative bg-gray-50 py-16 md:py-20 lg:py-24">
-      <div className="w-full max-w-[1216px] mx-auto px-6 lg:px-0">
+    <section id="social-proof" className="relative py-20 md:py-32 overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 xl:px-0">
         {/* Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <span className="inline-block px-4 py-1.5 text-sm font-medium text-accent bg-accent/10 rounded-full mb-5 border border-accent/20">
+        <div className="text-center mb-10 md:mb-16">
+          <p className="text-white/50 text-lg md:text-xl font-medium mb-3 md:mb-4">
             {t("sectionLabel")}
-          </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 leading-tight max-w-3xl mx-auto">
+          </p>
+          <h2 className="font-heading text-[28px] sm:text-[36px] md:text-[48px] font-semibold leading-[1.1] tracking-tight text-white mb-3 md:mb-4 max-w-3xl mx-auto">
             {t("title")}
           </h2>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
             {t("subtitle")}
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-12 md:mb-20">
           {stats.map((stat) => (
             <div
               key={stat.key}
-              className="text-center p-6 rounded-2xl bg-white shadow-sm border border-gray-200/60"
+              className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/[0.06]"
             >
-              <div className="text-3xl lg:text-4xl font-heading font-bold text-accent mb-2">
+              <div className="text-2xl sm:text-3xl lg:text-5xl font-heading font-bold text-accent mb-1 md:mb-2">
                 {t(`stats.${stat.key}.value`)}
               </div>
-              <div className="text-sm text-gray-600">{t(`stats.${stat.key}.label`)}</div>
+              <div className="text-xs md:text-base text-white/60">{t(`stats.${stat.key}.label`)}</div>
             </div>
           ))}
         </div>
 
         {/* Tech Logos - Infinite Scroll */}
         <div className="text-center">
-          <p className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-8">
+          <p className="text-xs md:text-sm font-medium text-white/40 uppercase tracking-wider mb-6 md:mb-10">
             {t("techTitle")}
           </p>
           <div className="relative overflow-hidden">
             {/* Gradient masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-bg-primary to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-bg-primary to-transparent z-10" />
 
             {/* Scrolling container */}
             <motion.div
@@ -105,26 +105,26 @@ export function SocialProof() {
               {techLogos.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex flex-col items-center gap-2 mx-8 flex-shrink-0"
+                  className="flex flex-col items-center gap-2 md:gap-3 mx-5 md:mx-10 flex-shrink-0"
                 >
                   <tech.icon
-                    className="w-10 h-10 md:w-12 md:h-12 text-gray-400"
+                    className="w-8 h-8 md:w-12 md:h-12 text-white/40 hover:text-white/70 transition-colors"
                     aria-label={tech.name}
                   />
-                  <span className="text-xs text-gray-400">{tech.name}</span>
+                  <span className="text-[10px] md:text-xs text-white/40">{tech.name}</span>
                 </div>
               ))}
               {/* Duplicate for seamless loop */}
               {techLogos.map((tech) => (
                 <div
                   key={`${tech.name}-dup`}
-                  className="flex flex-col items-center gap-2 mx-8 flex-shrink-0"
+                  className="flex flex-col items-center gap-2 md:gap-3 mx-5 md:mx-10 flex-shrink-0"
                 >
                   <tech.icon
-                    className="w-10 h-10 md:w-12 md:h-12 text-gray-400"
+                    className="w-8 h-8 md:w-12 md:h-12 text-white/40 hover:text-white/70 transition-colors"
                     aria-label={tech.name}
                   />
-                  <span className="text-xs text-gray-400">{tech.name}</span>
+                  <span className="text-[10px] md:text-xs text-white/40">{tech.name}</span>
                 </div>
               ))}
             </motion.div>

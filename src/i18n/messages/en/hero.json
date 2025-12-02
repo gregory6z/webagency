@@ -1,28 +1,11 @@
 {
-  "title": "Give your business digital power",
-  "titleMobile": "Digital power for your business",
-  "subtitleShort": "For professionals and local businesses:",
-  "subtitle": "High-performance websites that turn your visitors into clients, powered by tech giants' technology",
-  "subtitleMobile": "10x faster • SEO optimized • Design that converts",
-  "badge": "Web agency in Marseille & Aubagne",
+  "titleLine1": "We create",
+  "titleHighlight": "websites that convert",
+  "titleLine2": "and generate value",
+  "subtitle": "Strategic interface development to increase your conversions and highlight the real value of your product or service.",
   "cta": {
-    "primary": "Talk to an expert",
-    "primaryMobile": "Free quote",
-    "secondary": "See our solutions",
-    "secondaryMobile": "See solutions"
+    "primary": "Let's discuss your project"
   },
-  "socialProof": "Tech giants' stack: Netflix, Uber, Nike",
-  "visual": {
-    "dashboard": "Your dashboard",
-    "visitors": "Visitors",
-    "conversions": "Conversions",
-    "speed": "Speed",
-    "speedValue": "10x faster",
-    "seo": "SEO",
-    "seoValue": "#1 on Google",
-    "automation": "Automation",
-    "automationValue": "Works 24/7",
-    "newLead": "New lead",
-    "newClient": "+1 client"
-  }
+  "availability": "Available for new projects",
+  "techStack": "Our stack"
 }

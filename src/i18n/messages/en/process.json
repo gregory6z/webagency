@@ -1,29 +1,27 @@
 {
-  "sectionLabel": "Process",
-  "title": "How does it work?",
-  "subtitle": "A simple 4-step process",
+  "title": "Methodology",
+  "titleHighlight": "Sprint",
+  "subtitle": "How we create and transform interfaces into brands that convert.",
   "steps": {
-    "discovery": {
-      "title": "Discovery",
-      "description": "Free meeting to understand your needs",
-      "duration": "30 minutes"
+    "diagnosis": {
+      "title": "Diagnosis",
+      "description": "A <highlight>strategic</highlight> dive into your business, proposition, ideal client, competition and positioning."
     },
-    "proposal": {
-      "title": "Proposal",
-      "description": "Detailed quote with no commitment",
-      "duration": "48 hours"
+    "ideation": {
+      "title": "Ideation",
+      "description": "Creation of <highlight>persuasive</highlight> copies and structures in wireframes with a modern and strategic touch."
     },
-    "creation": {
-      "title": "Creation",
-      "description": "Development with regular validations",
-      "duration": "Tailored"
+    "prototype": {
+      "title": "Prototype",
+      "description": "Application of <highlight>UX/UI</highlight> best practices to deliver a modern, functional and high-level layout."
     },
-    "launch": {
-      "title": "Launch",
-      "description": "Go live and training",
-      "duration": "Ongoing support"
+    "implementation": {
+      "title": "Implementation",
+      "description": "Publication with focus on usability, <highlight>responsiveness</highlight> and performance — ready to impress."
+    },
+    "delivery": {
+      "title": "Delivery",
+      "description": "Design delivered with <highlight>excellence</highlight>. Receive all files, the right way — clear and documented."
     }
-  },
-  "highlight": "First meeting FREE with no commitment",
-  "cta": "Book my consultation"
+  }
 }

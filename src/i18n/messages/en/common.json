@@ -1,14 +1,18 @@
 {
   "navigation": {
     "home": "Home",
+    "solution": "Solution",
     "services": "Services",
+    "process": "Methodology",
+    "about": "About",
     "contact": "Contact"
   },
   "cta": {
     "getQuote": "Get my free quote",
     "learnMore": "Learn more",
     "contact": "Contact us",
-    "startProject": "Start my project"
+    "startProject": "Start my project",
+    "schedule": "Schedule a call"
   },
   "footer": {
     "rights": "All rights reserved",

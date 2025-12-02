@@ -1,46 +1,57 @@
 {
-  "title": "Solutions digitales complètes pour votre entreprise",
-  "subtitle": "Du site vitrine à l'automatisation totale",
-  "items": {
-    "landingPage": {
-      "title": "Landing Pages",
-      "description": "Pages de conversion optimisées pour capturer des clients 24h/24"
+  "title": "Expertises",
+  "titleHighlight": "& Maîtrises",
+  "subtitle": "Services personnalisés <highlight>sur mesure</highlight>",
+  "uniqueTitle": "Chaque entreprise est unique",
+  "uniqueDescription": "et chaque livraison est réalisée sur mesure pour générer des <highlight>résultats</highlight> dans le digital.",
+  "categories": {
+    "strategy": {
+      "title": "Stratégie",
+      "description": "<highlight>Clarté stratégique</highlight> qui positionne votre marque et met en valeur votre offre.",
+      "items": {
+        "positioning": "Positionnement",
+        "competition": "Analyse de la concurrence",
+        "audience": "Recherche d'audience",
+        "personas": "Personas",
+        "architecture": "Architecture d'offre",
+        "copywriting": "Textes persuasifs"
+      }
     },
-    "website": {
-      "title": "Sites Institutionnels",
-      "description": "Présence professionnelle complète avec plusieurs pages"
+    "design": {
+      "title": "Design",
+      "description": "Interfaces qui combinent esthétique, clarté et stratégie — <highlight>faites pour convertir</highlight>.",
+      "items": {
+        "artDirection": "Direction artistique",
+        "branding": "Identité visuelle premium",
+        "wireframes": "Wireframes et structures",
+        "uiDesign": "UI focalisée conversion",
+        "responsive": "Layouts 100% responsifs",
+        "styleGuide": "Style Guide complet"
+      }
     },
-    "ecommerce": {
-      "title": "Boutiques en Ligne",
-      "description": "Vendez vos produits 24h/24 avec paiement automatique"
-    },
-    "chatbot": {
-      "title": "Chatbot Intelligent",
-      "description": "Robot qui répond à vos clients 24h/24"
-    },
-    "booking": {
-      "title": "Réservation en Ligne",
-      "description": "Clients réservent seuls, comme Doctolib"
-    },
-    "whatsapp": {
-      "title": "WhatsApp Professionnel",
-      "description": "Messages automatiques de confirmation et suivi"
-    },
-    "email": {
-      "title": "Email Marketing",
-      "description": "Campagnes automatiques qui fidélisent vos clients"
-    },
-    "crm": {
-      "title": "CRM - Gestion Clients",
-      "description": "Tous vos clients et ventes organisés en un seul endroit"
-    },
-    "quotes": {
-      "title": "Devis Automatiques",
-      "description": "Créez des devis professionnels en quelques clics"
+    "development": {
+      "title": "Développement",
+      "description": "Sites <highlight>performants</highlight>, éditables et prêts à scaler de manière consistante.",
+      "items": {
+        "nextjs": "Expert Next.js",
+        "cms": "Panneau CMS",
+        "integrations": "Intégration automations",
+        "performance": "Optimisation performance",
+        "seo": "Configuration SEO",
+        "testing": "Tests d'usabilité"
+      }
     },
     "automation": {
-      "title": "Automatisation",
-      "description": "Le système travaille pendant que vous dormez"
+      "title": "Automatisations",
+      "description": "Gagnez du temps avec des <highlight>processus automatisés</highlight> et intelligents.",
+      "items": {
+        "workflows": "Flux automatisés",
+        "crm": "Intégration CRM",
+        "analytics": "Analytics et tracking",
+        "notifications": "Notifications automatiques",
+        "apis": "Connexions API",
+        "ai": "Intelligence artificielle"
+      }
     }
   }
 }

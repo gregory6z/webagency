@@ -1,29 +1,27 @@
 {
-  "sectionLabel": "Processus",
-  "title": "Comment ça marche ?",
-  "subtitle": "Un processus simple en 4 étapes",
+  "title": "Méthodologie",
+  "titleHighlight": "Sprint",
+  "subtitle": "Comment nous créons et transformons des interfaces en marques qui convertissent.",
   "steps": {
-    "discovery": {
-      "title": "Découverte",
-      "description": "Réunion gratuite pour comprendre vos besoins",
-      "duration": "30 minutes"
+    "diagnosis": {
+      "title": "Diagnostic",
+      "description": "Une plongée <highlight>stratégique</highlight> dans votre business, proposition, client idéal, concurrence et positionnement."
     },
-    "proposal": {
-      "title": "Proposition",
-      "description": "Devis détaillé sans engagement",
-      "duration": "48 heures"
+    "ideation": {
+      "title": "Idéation",
+      "description": "Création de copies <highlight>persuasives</highlight> et structures en wireframes avec une touche moderne et stratégique."
     },
-    "creation": {
-      "title": "Création",
-      "description": "Développement avec validations régulières",
-      "duration": "Sur mesure"
+    "prototype": {
+      "title": "Prototype",
+      "description": "Application des bonnes pratiques <highlight>UX/UI</highlight> pour livrer un layout moderne, fonctionnel et de haut niveau."
     },
-    "launch": {
-      "title": "Lancement",
-      "description": "Mise en ligne et formation",
-      "duration": "Support continu"
+    "implementation": {
+      "title": "Implémentation",
+      "description": "Publication avec focus sur usabilité, <highlight>responsivité</highlight> et performance — prêt à impressionner."
+    },
+    "delivery": {
+      "title": "Livraison",
+      "description": "Design livré avec <highlight>excellence</highlight>. Recevez tous les fichiers, de la bonne manière — clair et documenté."
     }
-  },
-  "highlight": "Première réunion GRATUITE et sans engagement",
-  "cta": "Réserver ma consultation"
+  }
 }

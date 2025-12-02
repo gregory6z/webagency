@@ -1,34 +1,34 @@
-import { notFound } from "next/navigation"
-import { NextIntlClientProvider } from "next-intl"
-import { getMessages, setRequestLocale } from "next-intl/server"
-import { Header } from "@/components/layout/Header"
-import type { Locale } from "@/i18n/config"
-import { routing } from "@/i18n/routing"
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { Header } from "@/components/layout/Header";
+import type { Locale } from "@/i18n/config";
+import { routing } from "@/i18n/routing";
 
 type Props = {
-  children: React.ReactNode
-  params: Promise<{ locale: string }>
-}
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+};
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }))
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params
+  const { locale } = await params;
 
   if (!routing.locales.includes(locale as Locale)) {
-    notFound()
+    notFound();
   }
 
-  setRequestLocale(locale)
+  setRequestLocale(locale);
 
-  const messages = await getMessages()
+  const messages = await getMessages();
 
   return (
     <NextIntlClientProvider messages={messages}>
       <Header />
-      <main className="pt-[72px]">{children}</main>
+      <main>{children}</main>
     </NextIntlClientProvider>
-  )
+  );
 }

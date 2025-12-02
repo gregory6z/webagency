@@ -1,118 +1,91 @@
-"use client"
+"use client";
 
-import { Code2, FileText, Rocket, Search } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { renderHighlight } from "@/lib/highlight";
 
-const stepIcons = {
-  discovery: Search,
-  proposal: FileText,
-  creation: Code2,
-  launch: Rocket,
-}
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      delay,
+      ease: [0.25, 0.1, 0.25, 1] as const,
+    },
+  }),
+};
 
-const stepKeys = ["discovery", "proposal", "creation", "launch"] as const
-
-type StepKey = (typeof stepKeys)[number]
-
-function StepCard({
-  stepKey,
-  stepNumber,
-  isLast,
-}: {
-  stepKey: StepKey
-  stepNumber: number
-  isLast: boolean
-}) {
-  const t = useTranslations("process")
-  const Icon = stepIcons[stepKey]
-
-  return (
-    <div className="relative flex flex-col items-center text-center h-full p-6 bg-white rounded-2xl shadow-sm border border-gray-200/60">
-      {/* Connector Line */}
-      {!isLast && (
-        <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-accent to-accent/30" />
-      )}
-
-      {/* Step Number */}
-      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-5">
-        <span className="text-lg font-heading font-bold text-accent">{stepNumber}</span>
-      </div>
-
-      {/* Icon */}
-      <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-5">
-        <Icon className="w-6 h-6 text-white" strokeWidth={1.5} />
-      </div>
-
-      {/* Title */}
-      <h3 className="font-heading text-lg font-semibold text-gray-900 mb-3">
-        {t(`steps.${stepKey}.title`)}
-      </h3>
-
-      {/* Description */}
-      <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-        {t(`steps.${stepKey}.description`)}
-      </p>
-
-      {/* Duration Badge */}
-      <span className="inline-block px-3 py-1 text-xs font-medium text-accent bg-accent/10 rounded-full mt-auto">
-        {t(`steps.${stepKey}.duration`)}
-      </span>
-    </div>
-  )
-}
+const steps = [
+  { key: "diagnosis", symbol: "[" },
+  { key: "ideation", symbol: "{" },
+  { key: "prototype", symbol: ":" },
+  { key: "implementation", symbol: "/" },
+  { key: "delivery", symbol: "!" },
+];
 
 export function Process() {
-  const t = useTranslations("process")
+  const t = useTranslations("process");
 
   return (
-    <section id="process" className="relative bg-gray-50 pt-0 pb-16 md:pb-20 lg:pb-24">
-      <div className="w-full max-w-[1216px] mx-auto px-6 lg:px-0">
+    <section id="process" className="relative py-20 md:py-32 overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 xl:px-0">
         {/* Header */}
-        <div className="mb-12">
-          <span className="inline-block px-3 py-1 text-xs font-medium text-white bg-accent rounded-full mb-4">
-            {t("sectionLabel")}
-          </span>
-          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 leading-tight max-w-2xl">
-            {t("title")}
-          </h2>
-          <p className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-xl">
-            {t("subtitle")}
-          </p>
+        <div className="mb-10 md:mb-16">
+          <motion.div
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <h2 className="font-heading text-[32px] sm:text-[40px] md:text-[48px] font-semibold leading-[1.1] tracking-tight text-white mb-4">
+              {t("title")}
+              <br />
+              <span className="text-accent">{t("titleHighlight")}</span>
+            </h2>
+            <p className="text-gray-400 max-w-xl text-base md:text-lg">{t("subtitle")}</p>
+          </motion.div>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {stepKeys.map((key, index) => (
-            <StepCard
-              key={key}
-              stepKey={key}
-              stepNumber={index + 1}
-              isLast={index === stepKeys.length - 1}
-            />
-          ))}
-        </div>
-
-        {/* Highlight Banner */}
-        <div className="relative overflow-hidden rounded-xl bg-accent p-6">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,transparent_50%)]" />
-          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                <Search className="w-5 h-5 text-white" strokeWidth={1.5} />
-              </div>
-              <p className="text-base lg:text-lg font-heading font-semibold text-white">
-                {t("highlight")}
-              </p>
-            </div>
-            <a
-              href="#contact"
-              className="inline-flex items-center px-5 py-2.5 text-sm bg-white text-accent font-semibold rounded-full hover:bg-white/90 transition-colors duration-300"
+        {/* Steps - Horizontal scroll on mobile, grid on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-5">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.key}
+              custom={0.1 + index * 0.1}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300"
             >
-              {t("cta")}
-            </a>
-          </div>
+              {/* Symbol and title */}
+              <div className="flex items-center gap-1.5 md:gap-2 mb-3 md:mb-4">
+                <span className="text-accent font-mono text-base md:text-lg">
+                  {step.symbol}
+                </span>
+                <h3 className="font-heading text-sm md:text-lg font-semibold text-white truncate">
+                  {t(`steps.${step.key}.title`)}
+                </h3>
+                <span className="text-accent font-mono text-base md:text-lg">
+                  {step.symbol === "["
+                    ? "]"
+                    : step.symbol === "{"
+                      ? "}"
+                      : step.symbol}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                {renderHighlight(t.raw(`steps.${step.key}.description`))}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,29 +1,27 @@
 {
-  "sectionLabel": "Proceso",
-  "title": "¿Cómo funciona?",
-  "subtitle": "Un proceso simple en 4 pasos",
+  "title": "Metodología",
+  "titleHighlight": "Sprint",
+  "subtitle": "Cómo creamos y transformamos interfaces en marcas que convierten.",
   "steps": {
-    "discovery": {
-      "title": "Descubrimiento",
-      "description": "Reunión gratuita para entender sus necesidades",
-      "duration": "30 minutos"
+    "diagnosis": {
+      "title": "Diagnóstico",
+      "description": "Una inmersión <highlight>estratégica</highlight> en tu negocio, propuesta, cliente ideal, competencia y posicionamiento."
     },
-    "proposal": {
-      "title": "Propuesta",
-      "description": "Presupuesto detallado sin compromiso",
-      "duration": "48 horas"
+    "ideation": {
+      "title": "Ideación",
+      "description": "Creación de copies <highlight>persuasivos</highlight> y estructuras en wireframes con un toque moderno y estratégico."
     },
-    "creation": {
-      "title": "Creación",
-      "description": "Desarrollo con validaciones regulares",
-      "duration": "A medida"
+    "prototype": {
+      "title": "Prototipo",
+      "description": "Aplicación de buenas prácticas de <highlight>UX/UI</highlight> para entregar un layout moderno, funcional y de alto nivel."
     },
-    "launch": {
-      "title": "Lanzamiento",
-      "description": "Publicación y formación",
-      "duration": "Soporte continuo"
+    "implementation": {
+      "title": "Implementación",
+      "description": "Publicación con foco en usabilidad, <highlight>responsividad</highlight> y performance — listo para impresionar."
+    },
+    "delivery": {
+      "title": "Entrega",
+      "description": "Diseño entregado con <highlight>excelencia</highlight>. Recibe todos los archivos, de la manera correcta — claro y documentado."
     }
-  },
-  "highlight": "Primera reunión GRATIS y sin compromiso",
-  "cta": "Reservar mi consulta"
+  }
 }

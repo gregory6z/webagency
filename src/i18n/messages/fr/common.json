@@ -1,14 +1,18 @@
 {
   "navigation": {
     "home": "Accueil",
+    "solution": "Solution",
     "services": "Services",
+    "process": "Méthodologie",
+    "about": "À propos",
     "contact": "Contact"
   },
   "cta": {
     "getQuote": "Obtenir mon devis gratuit",
     "learnMore": "En savoir plus",
     "contact": "Nous contacter",
-    "startProject": "Commencer mon projet"
+    "startProject": "Commencer mon projet",
+    "schedule": "Planifier un appel"
   },
   "footer": {
     "rights": "Tous droits réservés",

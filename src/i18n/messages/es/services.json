@@ -1,46 +1,57 @@
 {
-  "title": "Soluciones digitales completas para tu empresa",
-  "subtitle": "Del sitio básico a la automatización total",
-  "items": {
-    "landingPage": {
-      "title": "Landing Pages",
-      "description": "Páginas de conversión optimizadas para capturar clientes 24h"
+  "title": "Expertises",
+  "titleHighlight": "& Maestrías",
+  "subtitle": "Servicios personalizados <highlight>a medida</highlight>",
+  "uniqueTitle": "Cada negocio es único",
+  "uniqueDescription": "y cada entrega se realiza a medida para generar <highlight>resultados</highlight> en lo digital.",
+  "categories": {
+    "strategy": {
+      "title": "Estrategia",
+      "description": "<highlight>Claridad estratégica</highlight> que posiciona tu marca y destaca tu oferta.",
+      "items": {
+        "positioning": "Posicionamiento",
+        "competition": "Análisis de competencia",
+        "audience": "Investigación de audiencia",
+        "personas": "Personas",
+        "architecture": "Arquitectura de oferta",
+        "copywriting": "Textos persuasivos"
+      }
     },
-    "website": {
-      "title": "Sitios Institucionales",
-      "description": "Presencia profesional completa con múltiples páginas"
+    "design": {
+      "title": "Diseño",
+      "description": "Interfaces que combinan estética, claridad y estrategia — <highlight>hechas para convertir</highlight>.",
+      "items": {
+        "artDirection": "Dirección de arte",
+        "branding": "Identidad visual premium",
+        "wireframes": "Wireframes y estructuras",
+        "uiDesign": "UI enfocada en conversión",
+        "responsive": "Layouts 100% responsivos",
+        "styleGuide": "Style Guide completo"
+      }
     },
-    "ecommerce": {
-      "title": "Tiendas Online",
-      "description": "Vende tus productos 24h con pago automático"
-    },
-    "chatbot": {
-      "title": "Chatbot Inteligente",
-      "description": "Robot que responde a tus clientes 24h"
-    },
-    "booking": {
-      "title": "Reserva Online",
-      "description": "Clientes reservan solos, como Doctolib"
-    },
-    "whatsapp": {
-      "title": "WhatsApp Profesional",
-      "description": "Mensajes automáticos de confirmación y seguimiento"
-    },
-    "email": {
-      "title": "Email Marketing",
-      "description": "Campañas automáticas que fidelizan tus clientes"
-    },
-    "crm": {
-      "title": "CRM - Gestión de Clientes",
-      "description": "Todos tus clientes y ventas organizados en un solo lugar"
-    },
-    "quotes": {
-      "title": "Presupuestos Automáticos",
-      "description": "Crea presupuestos profesionales en pocos clics"
+    "development": {
+      "title": "Desarrollo",
+      "description": "Sitios <highlight>performantes</highlight>, editables y listos para escalar de forma consistente.",
+      "items": {
+        "nextjs": "Expert Next.js",
+        "cms": "Panel CMS",
+        "integrations": "Integración con automatizaciones",
+        "performance": "Optimización de performance",
+        "seo": "Configuración de SEO",
+        "testing": "Tests de usabilidad"
+      }
     },
     "automation": {
-      "title": "Automatización",
-      "description": "El sistema trabaja mientras duermes"
+      "title": "Automatizaciones",
+      "description": "Ahorra tiempo con <highlight>procesos automatizados</highlight> y flujos inteligentes.",
+      "items": {
+        "workflows": "Flujos automatizados",
+        "crm": "Integración CRM",
+        "analytics": "Analytics y tracking",
+        "notifications": "Notificaciones automáticas",
+        "apis": "Conexiones API",
+        "ai": "Inteligencia artificial"
+      }
     }
   }
 }

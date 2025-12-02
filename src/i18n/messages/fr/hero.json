@@ -1,28 +1,11 @@
 {
-  "title": "Donnez une puissance digitale à votre entreprise",
-  "titleMobile": "Puissance digitale pour votre business",
-  "subtitleShort": "Pour professionnels et entreprises locales:",
-  "subtitle": "Des sites web performants qui transforment vos visiteurs en clients, avec la technologie des géants du web",
-  "subtitleMobile": "10x plus rapide • SEO optimisé • Design qui convertit",
-  "badge": "Agence web à Marseille & Aubagne",
+  "titleLine1": "Nous créons des",
+  "titleHighlight": "sites qui convertissent",
+  "titleLine2": "et génèrent de la valeur",
+  "subtitle": "Développement d'interfaces pensées stratégiquement pour augmenter vos conversions et mettre en valeur votre produit ou service.",
   "cta": {
-    "primary": "Parlez à un expert",
-    "primaryMobile": "Devis gratuit",
-    "secondary": "Voir nos solutions",
-    "secondaryMobile": "Voir solutions"
+    "primary": "Discutons de votre projet"
   },
-  "socialProof": "Tech des géants: Netflix, Uber, Nike",
-  "visual": {
-    "dashboard": "Votre tableau de bord",
-    "visitors": "Visiteurs",
-    "conversions": "Conversions",
-    "speed": "Vitesse",
-    "speedValue": "10x plus rapide",
-    "seo": "SEO",
-    "seoValue": "1er sur Google",
-    "automation": "Automatisation",
-    "automationValue": "Fonctionne 24/7",
-    "newLead": "Nouveau lead",
-    "newClient": "+1 client"
-  }
+  "availability": "Disponible pour nouveaux projets",
+  "techStack": "Notre stack"
 }

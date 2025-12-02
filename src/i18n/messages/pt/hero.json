@@ -1,28 +1,11 @@
 {
-  "title": "Dê poder digital à sua empresa",
-  "titleMobile": "Poder digital para seu negócio",
-  "subtitleShort": "Para profissionais e empresas locais:",
-  "subtitle": "Sites performantes que transformam seus visitantes em clientes, com a tecnologia dos gigantes da web",
-  "subtitleMobile": "10x mais rápido • SEO otimizado • Design que converte",
-  "badge": "Agência web em Marseille & Aubagne",
+  "titleLine1": "Criamos",
+  "titleHighlight": "sites que convertem",
+  "titleLine2": "e geram valor",
+  "subtitle": "Desenvolvimento de interfaces pensadas estrategicamente para aumentar suas conversões e destacar o valor real do seu produto ou serviço.",
   "cta": {
-    "primary": "Fale com um especialista",
-    "primaryMobile": "Orçamento grátis",
-    "secondary": "Ver nossas soluções",
-    "secondaryMobile": "Ver soluções"
+    "primary": "Vamos conversar sobre seu projeto"
   },
-  "socialProof": "Tech dos gigantes: Netflix, Uber, Nike",
-  "visual": {
-    "dashboard": "Seu painel",
-    "visitors": "Visitantes",
-    "conversions": "Conversões",
-    "speed": "Velocidade",
-    "speedValue": "10x mais rápido",
-    "seo": "SEO",
-    "seoValue": "1º no Google",
-    "automation": "Automação",
-    "automationValue": "Trabalha 24/7",
-    "newLead": "Novo lead",
-    "newClient": "+1 cliente"
-  }
+  "availability": "Disponível para novos projetos",
+  "techStack": "Nossa stack"
 }
