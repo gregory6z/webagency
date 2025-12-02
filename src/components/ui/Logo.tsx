@@ -26,7 +26,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
         className="w-[70%] h-[70%]"
         role="img"
-        aria-label="WebAgence Logo"
+        aria-label="WebSignature Logo"
       >
         {/* Monitor/Screen frame */}
         <rect
@@ -79,7 +79,7 @@ export function LogoCode({ className, size = "md" }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
         className="w-[75%] h-[75%]"
         role="img"
-        aria-label="WebAgence Logo"
+        aria-label="WebSignature Logo"
       >
         {/* Left bracket < */}
         <path
@@ -129,7 +129,7 @@ export function LogoCursor({ className, size = "md" }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
         className="w-[75%] h-[75%]"
         role="img"
-        aria-label="WebAgence Logo"
+        aria-label="WebSignature Logo"
       >
         {/* W letter */}
         <path
@@ -167,7 +167,7 @@ export function LogoBrowser({ className, size = "md" }: LogoProps) {
         xmlns="http://www.w3.org/2000/svg"
         className="w-[70%] h-[70%]"
         role="img"
-        aria-label="WebAgence Logo"
+        aria-label="WebSignature Logo"
       >
         {/* Browser window */}
         <rect

@@ -49,7 +49,7 @@ export function Header() {
             className="group-hover:shadow-[var(--accent)]/40 transition-shadow duration-300"
           />
           <span className="text-[var(--text-primary)] font-heading font-semibold text-xl hidden sm:block">
-            WebAgence
+            WebSignature
           </span>
         </Link>
 
