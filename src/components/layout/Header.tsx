@@ -17,7 +17,7 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-bg-primary/80 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-transparent">
       <div className="max-w-[1320px] mx-auto px-6 xl:px-0 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}

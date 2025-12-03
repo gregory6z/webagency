@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { renderHighlight } from "@/lib/highlight";
+import { GlowCard } from "@/components/ui/GlowCard";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -53,37 +54,40 @@ export function Services() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="relative py-20 md:py-32 overflow-hidden">
+    <section id="services" className="relative py-20 md:py-32">
       <div className="max-w-[1320px] mx-auto px-6 xl:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_760px] gap-10 md:gap-16 lg:gap-20 lg:justify-between">
           {/* Sidebar - Left */}
-          <div className="flex flex-col justify-between">
-            {/* Top - Title */}
-            <motion.div
-              custom={0}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-            >
-              <p className="text-white/50 text-lg md:text-xl font-medium leading-7 mb-4 md:mb-6">
-                {t("title")}
-                <br />
-                {t("titleHighlight")}
-              </p>
-              <h2 className="font-heading text-[32px] sm:text-[40px] md:text-[48px] font-semibold leading-[1.1] tracking-tight text-white">
-                {renderHighlight(t.raw("subtitle"))}
-              </h2>
-            </motion.div>
+          <div className="flex flex-col">
+            {/* Sticky wrapper - ends before bottom text */}
+            <div className="flex-1 lg:pb-8">
+              <motion.div
+                custom={0}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                className="lg:sticky lg:top-24"
+              >
+                <p className="text-white/50 text-lg md:text-xl font-medium leading-7 mb-4 md:mb-6">
+                  {t("title")}
+                  <br />
+                  {t("titleHighlight")}
+                </p>
+                <h2 className="font-heading text-[32px] sm:text-[40px] md:text-[48px] font-semibold leading-[1.1] tracking-tight text-white">
+                  {renderHighlight(t.raw("subtitle"))}
+                </h2>
+              </motion.div>
+            </div>
 
-            {/* Bottom - Unique text */}
+            {/* Bottom - Unique text (outside sticky wrapper) */}
             <motion.div
               custom={0.4}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="hidden lg:block mt-auto"
+              className="hidden lg:block"
             >
               <span className="text-white mb-4 block">
                 <svg
@@ -114,33 +118,34 @@ export function Services() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/[0.06]"
               >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 md:gap-8">
-                  {/* Left - Title & Description */}
-                  <div className="lg:max-w-[400px]">
-                    <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight text-white mb-2">
-                      {t(`categories.${service.key}.title`)}
-                    </h3>
-                    <p className="text-white/60 text-base md:text-lg font-medium leading-relaxed">
-                      {renderHighlight(
-                        t.raw(`categories.${service.key}.description`),
-                      )}
-                    </p>
-                  </div>
+                <GlowCard className="p-5 md:p-6" glowColor="green">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 md:gap-8">
+                    {/* Left - Title & Description */}
+                    <div className="lg:max-w-[400px]">
+                      <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight text-white mb-2">
+                        {t(`categories.${service.key}.title`)}
+                      </h3>
+                      <p className="text-white/60 text-base md:text-lg font-medium leading-relaxed">
+                        {renderHighlight(
+                          t.raw(`categories.${service.key}.description`),
+                        )}
+                      </p>
+                    </div>
 
-                  {/* Right - Tags/Pills */}
-                  <div className="flex flex-row flex-wrap lg:flex-col gap-2 md:gap-3 items-start lg:items-end">
-                    {service.items.map((item) => (
-                      <span
-                        key={item}
-                        className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/[0.12] text-white font-medium text-xs md:text-sm min-h-[36px] md:min-h-[40px] flex items-center"
-                      >
-                        {t(`categories.${service.key}.items.${item}`)}
-                      </span>
-                    ))}
+                    {/* Right - Tags/Pills */}
+                    <div className="flex flex-row flex-wrap lg:flex-col gap-2 md:gap-3 items-start lg:items-end">
+                      {service.items.map((item) => (
+                        <span
+                          key={item}
+                          className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/[0.12] text-white font-medium text-xs md:text-sm min-h-[36px] md:min-h-[40px] flex items-center"
+                        >
+                          {t(`categories.${service.key}.items.${item}`)}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </GlowCard>
               </motion.div>
             ))}
           </div>
