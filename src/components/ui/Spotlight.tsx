@@ -1,6 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
 
 type SpotlightProps = {
   gradientFirst?: string
@@ -25,19 +26,23 @@ export function Spotlight({
   duration = 7,
   xOffset = 100,
 }: SpotlightProps = {}) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { margin: "100px" })
+
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       className="pointer-events-none absolute inset-0 h-full w-full"
     >
-      {/* Left spotlight */}
+      {/* Left spotlight - only animate when in view */}
       <motion.div
-        animate={{ x: [0, xOffset, 0] }}
+        animate={isInView ? { x: [0, xOffset, 0] } : { x: 0 }}
         transition={{
           duration,
-          repeat: Infinity,
+          repeat: isInView ? Infinity : 0,
           repeatType: "reverse",
           ease: "easeInOut",
         }}
@@ -72,12 +77,12 @@ export function Spotlight({
         />
       </motion.div>
 
-      {/* Right spotlight */}
+      {/* Right spotlight - only animate when in view */}
       <motion.div
-        animate={{ x: [0, -xOffset, 0] }}
+        animate={isInView ? { x: [0, -xOffset, 0] } : { x: 0 }}
         transition={{
           duration,
-          repeat: Infinity,
+          repeat: isInView ? Infinity : 0,
           repeatType: "reverse",
           ease: "easeInOut",
         }}

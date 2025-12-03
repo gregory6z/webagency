@@ -7,7 +7,7 @@ export function renderHighlight(text: string): ReactNode {
     if (part.startsWith("<highlight>") && part.endsWith("</highlight>")) {
       const content = part.replace(/<\/?highlight>/g, "");
       return (
-        <span key={index} className="text-white font-semibold">
+        <span key={index} className="text-accent">
           {content}
         </span>
       );

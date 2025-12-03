@@ -1,6 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
+import { renderHighlight } from "@/lib/highlight"
 import {
   SiAmazonwebservices,
   SiCloudflare,
@@ -55,7 +56,7 @@ export function SocialProof() {
             {t("sectionLabel")}
           </p>
           <h2 className="font-heading text-[28px] sm:text-[36px] md:text-[48px] font-semibold leading-[1.1] tracking-tight text-white mb-3 md:mb-4 max-w-3xl mx-auto">
-            {t("title")}
+            {renderHighlight(t.raw("title"))}
           </h2>
           <p className="text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
             {t("subtitle")}

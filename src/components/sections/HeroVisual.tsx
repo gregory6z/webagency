@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useTranslations } from "next-intl"
+import { useRef } from "react"
 
 const badgeDelays = {
   speed: 1,
@@ -12,11 +13,13 @@ const badgeDelays = {
 
 export function HeroVisual() {
   const t = useTranslations("hero.visual")
+  const ref = useRef(null)
+  const isInView = useInView(ref, { margin: "100px" })
 
   return (
-    <div className="relative w-full h-[320px] sm:h-[340px] lg:h-[480px] xl:h-[520px]">
-      {/* Glow background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(97,190,153,0.15)_0%,transparent_70%)] blur-[80px]" />
+    <div ref={ref} className="relative w-full h-[320px] sm:h-[340px] lg:h-[480px] xl:h-[520px]">
+      {/* Glow background - reduced blur for performance */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(97,190,153,0.15)_0%,transparent_70%)] blur-3xl" />
 
       {/* Main Dashboard Card */}
       <motion.div
@@ -25,7 +28,7 @@ export function HeroVisual() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[280px] lg:w-[400px] xl:w-[440px]"
       >
-        <div className="bg-[var(--bg-secondary)] border border-[var(--border-dark)] rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 xl:p-8 shadow-2xl">
+        <div className="bg-[var(--bg-secondary)] border border-[var(--border-dark)] rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 xl:p-8 shadow-xl">
           {/* Header */}
           <div className="flex items-center gap-1.5 lg:gap-2 mb-3 lg:mb-5">
             <div className="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-red-500/80" />
@@ -72,29 +75,29 @@ export function HeroVisual() {
       {/* Speed Badge - Top Right */}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
-        animate={{
+        animate={isInView ? {
           opacity: 1,
           x: [0, 12, 0],
           y: [0, -12, 0],
-        }}
+        } : { opacity: 1, x: 0, y: 0 }}
         transition={{
           opacity: { duration: 0.8, delay: 0.4 },
           x: {
             duration: 4,
             delay: badgeDelays.speed,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             repeatDelay: 20,
             ease: "easeInOut",
           },
           y: {
             duration: 4,
             delay: badgeDelays.speed,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             repeatDelay: 20,
             ease: "easeInOut",
           },
         }}
-        className="absolute top-[0%] right-[5%] lg:top-[5%] lg:right-[-12%] xl:right-[-15%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-2xl scale-[0.65] lg:scale-100 origin-top-right"
+        className="absolute top-[0%] right-[5%] lg:top-[5%] lg:right-[-12%] xl:right-[-15%] bg-[var(--bg-secondary)] border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-xl scale-[0.65] lg:scale-100 origin-top-right"
       >
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-full bg-[var(--accent)]/20 flex items-center justify-center">
@@ -124,31 +127,31 @@ export function HeroVisual() {
       {/* SEO Badge - Top Left */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{
+        animate={isInView ? {
           opacity: 1,
           scale: 1,
           x: [0, -12, 0],
           y: [0, -12, 0],
-        }}
+        } : { opacity: 1, scale: 1, x: 0, y: 0 }}
         transition={{
           opacity: { duration: 0.8, delay: 0.8 },
           scale: { duration: 0.8, delay: 0.8 },
           x: {
             duration: 4,
             delay: badgeDelays.seo,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             repeatDelay: 20,
             ease: "easeInOut",
           },
           y: {
             duration: 4,
             delay: badgeDelays.seo,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             repeatDelay: 20,
             ease: "easeInOut",
           },
         }}
-        className="absolute top-[0%] left-[5%] lg:top-[8%] lg:left-[-12%] xl:left-[-15%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-2xl scale-[0.65] lg:scale-100 origin-top-left"
+        className="absolute top-[0%] left-[5%] lg:top-[8%] lg:left-[-12%] xl:left-[-15%] bg-[var(--bg-secondary)] border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-xl scale-[0.65] lg:scale-100 origin-top-left"
       >
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-full bg-blue-500/20 flex items-center justify-center">
@@ -178,29 +181,29 @@ export function HeroVisual() {
       {/* Automation Badge - Bottom Left */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
-        animate={{
+        animate={isInView ? {
           opacity: 1,
           x: [0, -12, 0],
           y: [0, 12, 0],
-        }}
+        } : { opacity: 1, x: 0, y: 0 }}
         transition={{
           opacity: { duration: 0.8, delay: 0.6 },
           x: {
             duration: 4,
             delay: badgeDelays.automation,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             repeatDelay: 20,
             ease: "easeInOut",
           },
           y: {
             duration: 4,
             delay: badgeDelays.automation,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             repeatDelay: 20,
             ease: "easeInOut",
           },
         }}
-        className="absolute bottom-[0%] left-[5%] lg:bottom-[8%] lg:left-[-15%] xl:left-[-18%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-2xl scale-[0.65] lg:scale-100 origin-bottom-left"
+        className="absolute bottom-[0%] left-[5%] lg:bottom-[8%] lg:left-[-15%] xl:left-[-18%] bg-[var(--bg-secondary)] border border-white/10 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-xl scale-[0.65] lg:scale-100 origin-bottom-left"
       >
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-full bg-purple-500/20 flex items-center justify-center">
@@ -230,29 +233,29 @@ export function HeroVisual() {
       {/* New Lead Notification - Bottom Right */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{
+        animate={isInView ? {
           opacity: 1,
           x: [0, 12, 0],
           y: [0, 12, 0],
-        }}
+        } : { opacity: 1, x: 0, y: 0 }}
         transition={{
           opacity: { duration: 0.8, delay: 1 },
           x: {
             duration: 4,
             delay: badgeDelays.lead,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             repeatDelay: 20,
             ease: "easeInOut",
           },
           y: {
             duration: 4,
             delay: badgeDelays.lead,
-            repeat: Infinity,
+            repeat: isInView ? Infinity : 0,
             repeatDelay: 20,
             ease: "easeInOut",
           },
         }}
-        className="absolute bottom-[0%] right-[5%] lg:bottom-[5%] lg:right-[-8%] xl:right-[-12%] bg-[var(--bg-secondary)]/80 backdrop-blur-md border border-[var(--accent)]/30 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-2xl scale-[0.65] lg:scale-100 origin-bottom-right"
+        className="absolute bottom-[0%] right-[5%] lg:bottom-[5%] lg:right-[-8%] xl:right-[-12%] bg-[var(--bg-secondary)] border border-[var(--accent)]/30 rounded-xl lg:rounded-2xl p-2 lg:p-4 shadow-xl scale-[0.65] lg:scale-100 origin-bottom-right"
       >
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-[var(--accent)] flex items-center justify-center">

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface ShaderBackgroundProps {
   className?: string
@@ -9,6 +9,7 @@ interface ShaderBackgroundProps {
 export function ShaderBackground({ className }: ShaderBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
 
   const vsSource = `
     attribute vec4 aVertexPosition;
@@ -148,7 +149,26 @@ export function ShaderBackground({ className }: ShaderBackgroundProps) {
     return shaderProgram
   }
 
+  // Visibility observer
   useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting)
+      },
+      { rootMargin: "100px" }
+    )
+
+    observer.observe(container)
+    return () => observer.disconnect()
+  }, [])
+
+  // WebGL rendering - only when visible
+  useEffect(() => {
+    if (!isVisible) return
+
     const canvas = canvasRef.current
     const container = containerRef.current
     if (!canvas || !container) return
@@ -216,7 +236,7 @@ export function ShaderBackground({ className }: ShaderBackgroundProps) {
       window.removeEventListener("resize", resizeCanvas)
       cancelAnimationFrame(animationId)
     }
-  }, [])
+  }, [isVisible])
 
   return (
     <div ref={containerRef} className={className}>

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { renderHighlight } from "@/lib/highlight";
 import { Spotlight, GridBackground } from "@/components/ui/Spotlight";
-import { GlowCard } from "@/components/ui/GlowCard";
 import {
   SiNextdotjs,
   SiReact,
@@ -113,25 +112,21 @@ export function Hero() {
             </div>
 
             {/* Tech Stack card right */}
-            <div className="hidden lg:block">
-              <GlowCard className="p-5" glowColor="green">
-                <div className="flex flex-col gap-3">
-                  <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    {t("techStack")}
-                  </span>
-                  <div className="flex items-center gap-4">
-                    {techStack.map((tech) => (
-                      <div
-                        key={tech.name}
-                        className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/[0.05] text-gray-400 hover:text-white hover:bg-white/[0.1] transition-colors"
-                        title={tech.name}
-                      >
-                        <tech.icon className="w-5 h-5" />
-                      </div>
-                    ))}
+            <div className="hidden lg:flex flex-col gap-3 p-5 rounded-2xl bg-white/[0.04] border border-accent/20 shadow-[0_0_20px_rgba(97,190,153,0.08),inset_0_1px_0_rgba(255,255,255,0.05)]">
+              <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                {t("techStack")}
+              </span>
+              <div className="flex items-center gap-4">
+                {techStack.map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/[0.05] text-gray-400 hover:text-white hover:bg-white/[0.1] transition-colors"
+                    title={tech.name}
+                  >
+                    <tech.icon className="w-5 h-5" />
                   </div>
-                </div>
-              </GlowCard>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

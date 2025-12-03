@@ -1,22 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { renderHighlight } from "@/lib/highlight";
-import { GlowCard } from "@/components/ui/GlowCard";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      delay,
-      ease: [0.25, 0.1, 0.25, 1] as const,
-    },
-  }),
-};
+import { GlowCard } from "@/components/ui/spotlight-card";
 
 const services = [
   {
@@ -61,14 +47,7 @@ export function Services() {
           <div className="flex flex-col">
             {/* Sticky wrapper - ends before bottom text */}
             <div className="flex-1 lg:pb-8">
-              <motion.div
-                custom={0}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                className="lg:sticky lg:top-24"
-              >
+              <div className="lg:sticky lg:top-24">
                 <p className="text-white/50 text-lg md:text-xl font-medium leading-7 mb-4 md:mb-6">
                   {t("title")}
                   <br />
@@ -77,18 +56,11 @@ export function Services() {
                 <h2 className="font-heading text-[32px] sm:text-[40px] md:text-[48px] font-semibold leading-[1.1] tracking-tight text-white">
                   {renderHighlight(t.raw("subtitle"))}
                 </h2>
-              </motion.div>
+              </div>
             </div>
 
             {/* Bottom - Unique text (outside sticky wrapper) */}
-            <motion.div
-              custom={0.4}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="hidden lg:block"
-            >
+            <div className="hidden lg:block">
               <span className="text-white mb-4 block">
                 <svg
                   width="22"
@@ -105,48 +77,44 @@ export function Services() {
                 </span>{" "}
                 — {renderHighlight(t.raw("uniqueDescription"))}
               </p>
-            </motion.div>
+            </div>
           </div>
 
           {/* Services Stack - Right */}
           <div className="flex flex-col gap-4 md:gap-5">
-            {services.map((service, index) => (
-              <motion.div
+            {services.map((service) => (
+              <GlowCard
                 key={service.key}
-                custom={0.1 + index * 0.1}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
+                glowColor="green"
+                customSize
+                className="!p-5 md:!p-6 !grid-rows-1 !gap-0"
               >
-                <GlowCard className="p-5 md:p-6" glowColor="green">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 md:gap-8">
-                    {/* Left - Title & Description */}
-                    <div className="lg:max-w-[400px]">
-                      <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight text-white mb-2">
-                        {t(`categories.${service.key}.title`)}
-                      </h3>
-                      <p className="text-white/60 text-base md:text-lg font-medium leading-relaxed">
-                        {renderHighlight(
-                          t.raw(`categories.${service.key}.description`),
-                        )}
-                      </p>
-                    </div>
-
-                    {/* Right - Tags/Pills */}
-                    <div className="flex flex-row flex-wrap lg:flex-col gap-2 md:gap-3 items-start lg:items-end">
-                      {service.items.map((item) => (
-                        <span
-                          key={item}
-                          className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/[0.12] text-white font-medium text-xs md:text-sm min-h-[36px] md:min-h-[40px] flex items-center"
-                        >
-                          {t(`categories.${service.key}.items.${item}`)}
-                        </span>
-                      ))}
-                    </div>
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 md:gap-8">
+                  {/* Left - Title & Description */}
+                  <div className="lg:max-w-[400px]">
+                    <h3 className="font-heading text-xl md:text-2xl font-semibold leading-tight text-white mb-2">
+                      {t(`categories.${service.key}.title`)}
+                    </h3>
+                    <p className="text-white/60 text-base md:text-lg font-medium leading-relaxed">
+                      {renderHighlight(
+                        t.raw(`categories.${service.key}.description`),
+                      )}
+                    </p>
                   </div>
-                </GlowCard>
-              </motion.div>
+
+                  {/* Right - Tags/Pills */}
+                  <div className="flex flex-row flex-wrap lg:flex-col gap-2 md:gap-3 items-start lg:items-end">
+                    {service.items.map((item) => (
+                      <span
+                        key={item}
+                        className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/[0.12] text-white font-medium text-xs md:text-sm min-h-[36px] md:min-h-[40px] flex items-center"
+                      >
+                        {t(`categories.${service.key}.items.${item}`)}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </GlowCard>
             ))}
           </div>
         </div>
