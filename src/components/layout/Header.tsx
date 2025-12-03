@@ -42,7 +42,7 @@ export function Header() {
         isScrolled ? "bg-bg-primary border-b border-white/5" : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1320px] mx-auto px-6 xl:px-0 py-6">
+      <div className="max-w-[1320px] mx-auto px-4 md:px-6 xl:px-0 py-3 md:py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="flex-shrink-0">
