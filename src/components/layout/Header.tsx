@@ -1,47 +1,45 @@
-"use client";
+"use client"
 
-import { AnimatePresence, motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { useState, useEffect, useRef } from "react";
-import { Logo } from "@/components/ui/Logo";
-import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { AnimatePresence, motion } from "framer-motion"
+import { useTranslations } from "next-intl"
+import { useEffect, useRef, useState } from "react"
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher"
+import { Logo } from "@/components/ui/Logo"
 
 export function Header() {
-  const t = useTranslations("common");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const ticking = useRef(false);
+  const t = useTranslations("common")
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const ticking = useRef(false)
 
   useEffect(() => {
     const handleScroll = () => {
       if (!ticking.current) {
         requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
-          ticking.current = false;
-        });
-        ticking.current = true;
+          setIsScrolled(window.scrollY > 20)
+          ticking.current = false
+        })
+        ticking.current = true
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll()
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
     { href: "#solution", label: t("navigation.solution") },
     { href: "#services", label: t("navigation.services") },
     { href: "#process", label: t("navigation.process") },
     { href: "#contact", label: t("navigation.contact") },
-  ];
+  ]
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 ${
-        isScrolled
-          ? "bg-bg-primary border-b border-white/5"
-          : "bg-transparent"
+        isScrolled ? "bg-bg-primary border-b border-white/5" : "bg-transparent"
       }`}
     >
       <div className="max-w-[1320px] mx-auto px-6 xl:px-0 py-6">
@@ -117,5 +115,5 @@ export function Header() {
         )}
       </AnimatePresence>
     </header>
-  );
+  )
 }

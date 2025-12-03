@@ -1,7 +1,6 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { renderHighlight } from "@/lib/highlight"
 import {
   SiAmazonwebservices,
   SiCloudflare,
@@ -21,6 +20,7 @@ import {
   SiVercel,
   SiZod,
 } from "react-icons/si"
+import { renderHighlight } from "@/lib/highlight"
 
 const techLogos = [
   { icon: SiReact, name: "React" },
@@ -73,7 +73,9 @@ export function SocialProof() {
               <div className="text-2xl sm:text-3xl lg:text-5xl font-heading font-bold text-accent mb-1 md:mb-2">
                 {t(`stats.${stat.key}.value`)}
               </div>
-              <div className="text-xs md:text-base text-white/60">{t(`stats.${stat.key}.label`)}</div>
+              <div className="text-xs md:text-base text-white/60">
+                {t(`stats.${stat.key}.label`)}
+              </div>
             </div>
           ))}
         </div>

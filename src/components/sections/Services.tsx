@@ -1,30 +1,17 @@
-"use client";
+"use client"
 
-import { useTranslations } from "next-intl";
-import { renderHighlight } from "@/lib/highlight";
-import { GlowCard } from "@/components/ui/spotlight-card";
+import { useTranslations } from "next-intl"
+import { GlowCard } from "@/components/ui/spotlight-card"
+import { renderHighlight } from "@/lib/highlight"
 
 const services = [
   {
     key: "strategy",
-    items: [
-      "positioning",
-      "competition",
-      "audience",
-      "personas",
-      "architecture",
-      "copywriting",
-    ],
+    items: ["positioning", "competition", "audience", "personas", "architecture", "copywriting"],
   },
   {
     key: "design",
-    items: [
-      "artDirection",
-      "branding",
-      "uiDesign",
-      "responsive",
-      "styleGuide",
-    ],
+    items: ["artDirection", "branding", "uiDesign", "responsive", "styleGuide"],
   },
   {
     key: "development",
@@ -34,10 +21,10 @@ const services = [
     key: "automation",
     items: ["workflows", "crm", "analytics", "notifications", "apis", "ai"],
   },
-];
+]
 
 export function Services() {
-  const t = useTranslations("services");
+  const t = useTranslations("services")
 
   return (
     <section id="services" className="relative py-20 md:py-32">
@@ -62,20 +49,13 @@ export function Services() {
             {/* Bottom - Unique text (outside sticky wrapper) */}
             <div className="hidden lg:block">
               <span className="text-white mb-4 block">
-                <svg
-                  width="22"
-                  height="21"
-                  viewBox="0 0 22 21"
-                  fill="currentColor"
-                >
+                <svg width="22" height="21" viewBox="0 0 22 21" fill="currentColor">
                   <path d="M10.99 19.538L1.918 10.484L10.99 1.412L20.044 10.484ZM10.99 17.9L18.406 10.484L10.99 3.05L3.574 10.484ZM10.99 14.246L7.21 10.484L10.99 6.704L14.77 10.484Z" />
                 </svg>
               </span>
               <p className="text-white/60 text-base font-medium leading-relaxed">
-                <span className="text-white font-semibold">
-                  {t("uniqueTitle")}
-                </span>{" "}
-                — {renderHighlight(t.raw("uniqueDescription"))}
+                <span className="text-white font-semibold">{t("uniqueTitle")}</span> —{" "}
+                {renderHighlight(t.raw("uniqueDescription"))}
               </p>
             </div>
           </div>
@@ -96,9 +76,7 @@ export function Services() {
                       {t(`categories.${service.key}.title`)}
                     </h3>
                     <p className="text-white/60 text-base md:text-lg font-medium leading-relaxed">
-                      {renderHighlight(
-                        t.raw(`categories.${service.key}.description`),
-                      )}
+                      {renderHighlight(t.raw(`categories.${service.key}.description`))}
                     </p>
                   </div>
 
@@ -120,5 +98,5 @@ export function Services() {
         </div>
       </div>
     </section>
-  );
+  )
 }

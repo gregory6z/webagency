@@ -3,8 +3,9 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Check } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { renderHighlight } from "@/lib/highlight"
+import { ContactDialog } from "@/components/ui/ContactDialog"
 import { ShaderBackground } from "@/components/ui/ShaderBackground"
+import { renderHighlight } from "@/lib/highlight"
 
 const guarantees = ["response", "free", "consultation"] as const
 
@@ -50,13 +51,15 @@ export function CtaFinal() {
             className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-6 px-4 sm:px-0"
           >
             {/* Primary Button */}
-            <button
-              type="button"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-bg-primary bg-accent hover:bg-accent-hover rounded-full transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-105"
-            >
-              <span>{t("button")}</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
+            <ContactDialog>
+              <button
+                type="button"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-bg-primary bg-accent hover:bg-accent-hover rounded-full transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-105"
+              >
+                <span>{t("button")}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </ContactDialog>
           </motion.div>
 
           {/* Guarantees */}

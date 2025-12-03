@@ -7,5 +7,81 @@
     "response": "Response within 24h",
     "free": "Free quote, no commitment",
     "consultation": "Free initial consultation"
+  },
+  "form": {
+    "title": "Start your project",
+    "subtitle": "Answer a few questions to help us better understand your needs.",
+    "steps": {
+      "project": "Project",
+      "budget": "Budget",
+      "contact": "Contact",
+      "details": "Details"
+    },
+    "step1": {
+      "title": "What type of project do you have?",
+      "subtitle": "Select the service that best matches your needs",
+      "options": {
+        "website": "Business website",
+        "ecommerce": "E-commerce",
+        "webapp": "Web application",
+        "automation": "Automation",
+        "redesign": "Website redesign",
+        "other": "Other project"
+      }
+    },
+    "step2": {
+      "title": "What's your budget and timeline?",
+      "subtitle": "This helps us propose the best solution",
+      "budget": "Estimated budget",
+      "budgetOptions": {
+        "small": "< $3,000",
+        "medium": "$3,000 - $8,000",
+        "large": "$8,000 - $15,000",
+        "enterprise": "> $15,000",
+        "unknown": "To be defined"
+      },
+      "timeline": "Desired timeline",
+      "timelineOptions": {
+        "urgent": "< 1 month",
+        "normal": "1 - 3 months",
+        "flexible": "3 - 6 months",
+        "unknown": "No deadline"
+      }
+    },
+    "step3": {
+      "title": "How can we contact you?",
+      "subtitle": "We'll respond within 24 hours",
+      "name": "Full name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john.doe@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+1 234 567 8900",
+      "phoneOptional": "optional",
+      "company": "Company",
+      "companyPlaceholder": "Your company name",
+      "companyOptional": "optional"
+    },
+    "step4": {
+      "title": "Tell us about your project",
+      "subtitle": "The more details you provide, the better we can help",
+      "website": "Current website",
+      "websitePlaceholder": "https://yoursite.com",
+      "websiteOptional": "if existing",
+      "message": "Project description",
+      "messagePlaceholder": "Describe your project, goals, target audience..."
+    },
+    "navigation": {
+      "back": "Back",
+      "next": "Continue",
+      "submit": "Send my request"
+    },
+    "submitting": "Sending...",
+    "success": {
+      "title": "Request sent!",
+      "message": "Thank you for your trust. Our team will contact you within 24h to discuss your project.",
+      "close": "Close"
+    },
+    "error": "An error occurred. Please try again."
   }
 }

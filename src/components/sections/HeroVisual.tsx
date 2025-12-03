@@ -75,11 +75,15 @@ export function HeroVisual() {
       {/* Speed Badge - Top Right */}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
-        animate={isInView ? {
-          opacity: 1,
-          x: [0, 12, 0],
-          y: [0, -12, 0],
-        } : { opacity: 1, x: 0, y: 0 }}
+        animate={
+          isInView
+            ? {
+                opacity: 1,
+                x: [0, 12, 0],
+                y: [0, -12, 0],
+              }
+            : { opacity: 1, x: 0, y: 0 }
+        }
         transition={{
           opacity: { duration: 0.8, delay: 0.4 },
           x: {
@@ -127,12 +131,16 @@ export function HeroVisual() {
       {/* SEO Badge - Top Left */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={isInView ? {
-          opacity: 1,
-          scale: 1,
-          x: [0, -12, 0],
-          y: [0, -12, 0],
-        } : { opacity: 1, scale: 1, x: 0, y: 0 }}
+        animate={
+          isInView
+            ? {
+                opacity: 1,
+                scale: 1,
+                x: [0, -12, 0],
+                y: [0, -12, 0],
+              }
+            : { opacity: 1, scale: 1, x: 0, y: 0 }
+        }
         transition={{
           opacity: { duration: 0.8, delay: 0.8 },
           scale: { duration: 0.8, delay: 0.8 },
@@ -181,11 +189,15 @@ export function HeroVisual() {
       {/* Automation Badge - Bottom Left */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
-        animate={isInView ? {
-          opacity: 1,
-          x: [0, -12, 0],
-          y: [0, 12, 0],
-        } : { opacity: 1, x: 0, y: 0 }}
+        animate={
+          isInView
+            ? {
+                opacity: 1,
+                x: [0, -12, 0],
+                y: [0, 12, 0],
+              }
+            : { opacity: 1, x: 0, y: 0 }
+        }
         transition={{
           opacity: { duration: 0.8, delay: 0.6 },
           x: {
@@ -233,11 +245,15 @@ export function HeroVisual() {
       {/* New Lead Notification - Bottom Right */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? {
-          opacity: 1,
-          x: [0, 12, 0],
-          y: [0, 12, 0],
-        } : { opacity: 1, x: 0, y: 0 }}
+        animate={
+          isInView
+            ? {
+                opacity: 1,
+                x: [0, 12, 0],
+                y: [0, 12, 0],
+              }
+            : { opacity: 1, x: 0, y: 0 }
+        }
         transition={{
           opacity: { duration: 0.8, delay: 1 },
           x: {

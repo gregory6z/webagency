@@ -7,5 +7,81 @@
     "response": "Respuesta en 24h",
     "free": "Presupuesto gratis y sin compromiso",
     "consultation": "Consulta inicial gratuita"
+  },
+  "form": {
+    "title": "Iniciar tu proyecto",
+    "subtitle": "Responde algunas preguntas para ayudarnos a entender mejor tus necesidades.",
+    "steps": {
+      "project": "Proyecto",
+      "budget": "Presupuesto",
+      "contact": "Contacto",
+      "details": "Detalles"
+    },
+    "step1": {
+      "title": "¿Qué tipo de proyecto tienes?",
+      "subtitle": "Selecciona el servicio que mejor corresponda a tus necesidades",
+      "options": {
+        "website": "Sitio web corporativo",
+        "ecommerce": "E-commerce",
+        "webapp": "Aplicación web",
+        "automation": "Automatización",
+        "redesign": "Rediseño de sitio",
+        "other": "Otro proyecto"
+      }
+    },
+    "step2": {
+      "title": "¿Cuál es tu presupuesto y plazo?",
+      "subtitle": "Esto nos ayuda a proponerte la mejor solución",
+      "budget": "Presupuesto estimado",
+      "budgetOptions": {
+        "small": "< 3.000 €",
+        "medium": "3.000 € - 8.000 €",
+        "large": "8.000 € - 15.000 €",
+        "enterprise": "> 15.000 €",
+        "unknown": "Por definir"
+      },
+      "timeline": "Plazo deseado",
+      "timelineOptions": {
+        "urgent": "< 1 mes",
+        "normal": "1 - 3 meses",
+        "flexible": "3 - 6 meses",
+        "unknown": "Sin fecha límite"
+      }
+    },
+    "step3": {
+      "title": "¿Cómo podemos contactarte?",
+      "subtitle": "Te responderemos en 24 horas",
+      "name": "Nombre completo",
+      "namePlaceholder": "Juan García",
+      "email": "Email",
+      "emailPlaceholder": "juan.garcia@ejemplo.es",
+      "phone": "Teléfono",
+      "phonePlaceholder": "+34 612 345 678",
+      "phoneOptional": "opcional",
+      "company": "Empresa",
+      "companyPlaceholder": "Nombre de tu empresa",
+      "companyOptional": "opcional"
+    },
+    "step4": {
+      "title": "Cuéntanos sobre tu proyecto",
+      "subtitle": "Cuantos más detalles nos des, mejor podremos ayudarte",
+      "website": "Sitio web actual",
+      "websitePlaceholder": "https://tusitio.es",
+      "websiteOptional": "si existe",
+      "message": "Descripción del proyecto",
+      "messagePlaceholder": "Describe tu proyecto, objetivos, público objetivo..."
+    },
+    "navigation": {
+      "back": "Volver",
+      "next": "Continuar",
+      "submit": "Enviar mi solicitud"
+    },
+    "submitting": "Enviando...",
+    "success": {
+      "title": "¡Solicitud enviada!",
+      "message": "Gracias por tu confianza. Nuestro equipo te contactará en 24h para discutir tu proyecto.",
+      "close": "Cerrar"
+    },
+    "error": "Ocurrió un error. Por favor, inténtalo de nuevo."
   }
 }

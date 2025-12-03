@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { renderHighlight } from "@/lib/highlight";
+import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
+import { renderHighlight } from "@/lib/highlight"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,17 +15,17 @@ const fadeUp = {
       ease: [0.25, 0.1, 0.25, 1] as const,
     },
   }),
-};
+}
 
 const cards = [
   { key: "quality", icon: "✦" },
   { key: "conversion", icon: "◈" },
   { key: "differentiation", icon: "◇" },
   { key: "speed", icon: "⚡" },
-];
+]
 
 export function Solution() {
-  const t = useTranslations("solution");
+  const t = useTranslations("solution")
 
   return (
     <section id="solution" className="relative py-20 md:py-32 overflow-hidden">
@@ -44,9 +44,7 @@ export function Solution() {
             >
               {t("title")}
               <br />
-              <span className="text-white/60">
-                {renderHighlight(t.raw("titleHighlight"))}
-              </span>
+              <span className="text-white/60">{renderHighlight(t.raw("titleHighlight"))}</span>
             </motion.h2>
 
             {/* Badge at bottom */}
@@ -58,7 +56,7 @@ export function Solution() {
               variants={fadeUp}
               className="flex items-center gap-3 mt-12 lg:mt-0"
             >
-              <span className="text-accent font-semibold text-lg">+50</span>
+              <span className="text-accent font-semibold text-lg">5+</span>
               <span className="text-gray-400">{t("badge")}</span>
             </motion.div>
           </div>
@@ -82,7 +80,8 @@ export function Solution() {
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-60 transition-opacity duration-500 blur-[40px]"
                   style={{
-                    background: "radial-gradient(circle at 50% 50%, rgba(97, 190, 153, 0.15), transparent 70%)",
+                    background:
+                      "radial-gradient(circle at 50% 50%, rgba(97, 190, 153, 0.15), transparent 70%)",
                   }}
                 />
 
@@ -104,5 +103,5 @@ export function Solution() {
         </div>
       </div>
     </section>
-  );
+  )
 }

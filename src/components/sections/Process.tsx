@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { renderHighlight } from "@/lib/highlight";
+import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
+import { renderHighlight } from "@/lib/highlight"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,7 +15,7 @@ const fadeUp = {
       ease: [0.25, 0.1, 0.25, 1] as const,
     },
   }),
-};
+}
 
 const steps = [
   { key: "diagnosis", symbol: "[" },
@@ -23,10 +23,10 @@ const steps = [
   { key: "prototype", symbol: ":" },
   { key: "implementation", symbol: "/" },
   { key: "delivery", symbol: "!" },
-];
+]
 
 export function Process() {
-  const t = useTranslations("process");
+  const t = useTranslations("process")
 
   return (
     <section id="process" className="relative py-20 md:py-32 overflow-hidden">
@@ -63,18 +63,12 @@ export function Process() {
             >
               {/* Symbol and title */}
               <div className="flex items-center gap-1.5 md:gap-2 mb-3 md:mb-4">
-                <span className="text-accent font-mono text-base md:text-lg">
-                  {step.symbol}
-                </span>
+                <span className="text-accent font-mono text-base md:text-lg">{step.symbol}</span>
                 <h3 className="font-heading text-sm md:text-lg font-semibold text-white truncate">
                   {t(`steps.${step.key}.title`)}
                 </h3>
                 <span className="text-accent font-mono text-base md:text-lg">
-                  {step.symbol === "["
-                    ? "]"
-                    : step.symbol === "{"
-                      ? "}"
-                      : step.symbol}
+                  {step.symbol === "[" ? "]" : step.symbol === "{" ? "}" : step.symbol}
                 </span>
               </div>
 
@@ -87,5 +81,5 @@ export function Process() {
         </div>
       </div>
     </section>
-  );
+  )
 }

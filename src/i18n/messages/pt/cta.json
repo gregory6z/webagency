@@ -7,5 +7,81 @@
     "response": "Resposta em 24h",
     "free": "Orçamento grátis e sem compromisso",
     "consultation": "Consulta inicial gratuita"
+  },
+  "form": {
+    "title": "Iniciar seu projeto",
+    "subtitle": "Responda algumas perguntas para nos ajudar a entender melhor suas necessidades.",
+    "steps": {
+      "project": "Projeto",
+      "budget": "Orçamento",
+      "contact": "Contato",
+      "details": "Detalhes"
+    },
+    "step1": {
+      "title": "Que tipo de projeto você tem?",
+      "subtitle": "Selecione o serviço que melhor corresponde às suas necessidades",
+      "options": {
+        "website": "Site institucional",
+        "ecommerce": "E-commerce",
+        "webapp": "Aplicação web",
+        "automation": "Automação",
+        "redesign": "Redesign de site",
+        "other": "Outro projeto"
+      }
+    },
+    "step2": {
+      "title": "Qual é seu orçamento e prazo?",
+      "subtitle": "Isso nos ajuda a propor a melhor solução",
+      "budget": "Orçamento estimado",
+      "budgetOptions": {
+        "small": "< R$ 15.000",
+        "medium": "R$ 15.000 - R$ 40.000",
+        "large": "R$ 40.000 - R$ 75.000",
+        "enterprise": "> R$ 75.000",
+        "unknown": "A definir"
+      },
+      "timeline": "Prazo desejado",
+      "timelineOptions": {
+        "urgent": "< 1 mês",
+        "normal": "1 - 3 meses",
+        "flexible": "3 - 6 meses",
+        "unknown": "Sem prazo definido"
+      }
+    },
+    "step3": {
+      "title": "Como podemos entrar em contato?",
+      "subtitle": "Responderemos em até 24 horas",
+      "name": "Nome completo",
+      "namePlaceholder": "João Silva",
+      "email": "Email",
+      "emailPlaceholder": "joao.silva@exemplo.com.br",
+      "phone": "Telefone",
+      "phonePlaceholder": "+55 11 98765-4321",
+      "phoneOptional": "opcional",
+      "company": "Empresa",
+      "companyPlaceholder": "Nome da sua empresa",
+      "companyOptional": "opcional"
+    },
+    "step4": {
+      "title": "Conte-nos sobre seu projeto",
+      "subtitle": "Quanto mais detalhes você fornecer, melhor poderemos ajudar",
+      "website": "Site atual",
+      "websitePlaceholder": "https://seusite.com.br",
+      "websiteOptional": "se existente",
+      "message": "Descrição do projeto",
+      "messagePlaceholder": "Descreva seu projeto, objetivos, público-alvo..."
+    },
+    "navigation": {
+      "back": "Voltar",
+      "next": "Continuar",
+      "submit": "Enviar minha solicitação"
+    },
+    "submitting": "Enviando...",
+    "success": {
+      "title": "Solicitação enviada!",
+      "message": "Obrigado pela sua confiança. Nossa equipe entrará em contato em até 24h para discutir seu projeto.",
+      "close": "Fechar"
+    },
+    "error": "Ocorreu um erro. Por favor, tente novamente."
   }
 }

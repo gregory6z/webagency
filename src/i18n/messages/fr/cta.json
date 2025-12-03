@@ -7,5 +7,81 @@
     "response": "Réponse sous 24h",
     "free": "Devis gratuit et sans engagement",
     "consultation": "Consultation initiale offerte"
+  },
+  "form": {
+    "title": "Démarrer votre projet",
+    "subtitle": "Répondez à quelques questions pour nous aider à mieux comprendre vos besoins.",
+    "steps": {
+      "project": "Projet",
+      "budget": "Budget",
+      "contact": "Contact",
+      "details": "Détails"
+    },
+    "step1": {
+      "title": "Quel type de projet avez-vous ?",
+      "subtitle": "Sélectionnez le service qui correspond le mieux à vos besoins",
+      "options": {
+        "website": "Site vitrine",
+        "ecommerce": "E-commerce",
+        "webapp": "Application web",
+        "automation": "Automatisation",
+        "redesign": "Refonte de site",
+        "other": "Autre projet"
+      }
+    },
+    "step2": {
+      "title": "Quel est votre budget et délai ?",
+      "subtitle": "Cela nous aide à vous proposer la meilleure solution",
+      "budget": "Budget estimé",
+      "budgetOptions": {
+        "small": "< 3 000 €",
+        "medium": "3 000 € - 8 000 €",
+        "large": "8 000 € - 15 000 €",
+        "enterprise": "> 15 000 €",
+        "unknown": "À définir"
+      },
+      "timeline": "Délai souhaité",
+      "timelineOptions": {
+        "urgent": "< 1 mois",
+        "normal": "1 - 3 mois",
+        "flexible": "3 - 6 mois",
+        "unknown": "Pas de deadline"
+      }
+    },
+    "step3": {
+      "title": "Comment vous contacter ?",
+      "subtitle": "Nous vous répondrons sous 24h",
+      "name": "Nom complet",
+      "namePlaceholder": "Jean Dupont",
+      "email": "Email",
+      "emailPlaceholder": "jean.dupont@exemple.fr",
+      "phone": "Téléphone",
+      "phonePlaceholder": "+33 6 12 34 56 78",
+      "phoneOptional": "optionnel",
+      "company": "Entreprise",
+      "companyPlaceholder": "Nom de votre entreprise",
+      "companyOptional": "optionnel"
+    },
+    "step4": {
+      "title": "Parlez-nous de votre projet",
+      "subtitle": "Plus vous nous donnez de détails, mieux nous pourrons vous aider",
+      "website": "Site web actuel",
+      "websitePlaceholder": "https://votresite.fr",
+      "websiteOptional": "si existant",
+      "message": "Description du projet",
+      "messagePlaceholder": "Décrivez votre projet, vos objectifs, votre cible..."
+    },
+    "navigation": {
+      "back": "Retour",
+      "next": "Continuer",
+      "submit": "Envoyer ma demande"
+    },
+    "submitting": "Envoi en cours...",
+    "success": {
+      "title": "Demande envoyée !",
+      "message": "Merci pour votre confiance. Notre équipe vous contactera sous 24h pour discuter de votre projet.",
+      "close": "Fermer"
+    },
+    "error": "Une erreur est survenue. Veuillez réessayer."
   }
 }

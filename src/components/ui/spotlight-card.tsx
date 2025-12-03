@@ -1,6 +1,7 @@
 "use client"
 
-import React, { useEffect, useRef, ReactNode } from "react"
+import type React from "react"
+import { type ReactNode, useEffect, useRef } from "react"
 
 interface GlowCardProps {
   children: ReactNode

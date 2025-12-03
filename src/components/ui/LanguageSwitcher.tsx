@@ -1,9 +1,9 @@
 "use client"
 
-import { useLocale } from "next-intl"
-import { useRouter, usePathname } from "@/i18n/navigation"
-import { useState, useRef, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
+import { useLocale } from "next-intl"
+import { useEffect, useRef, useState } from "react"
+import { usePathname, useRouter } from "@/i18n/navigation"
 
 const locales = [
   { code: "fr", label: "FR", name: "Français" },

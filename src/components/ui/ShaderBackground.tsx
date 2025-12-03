@@ -158,7 +158,7 @@ export function ShaderBackground({ className }: ShaderBackgroundProps) {
       ([entry]) => {
         setIsVisible(entry.isIntersecting)
       },
-      { rootMargin: "100px" }
+      { rootMargin: "100px" },
     )
 
     observer.observe(container)

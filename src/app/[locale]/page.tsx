@@ -10,12 +10,12 @@ import { Solution } from "@/components/sections/Solution"
 import { MobileCtaBar } from "@/components/ui/MobileCtaBar"
 
 type Props = {
-  params: Promise<{ locale: string }>;
-};
+  params: Promise<{ locale: string }>
+}
 
 export default async function Home({ params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+  const { locale } = await params
+  setRequestLocale(locale)
 
   return (
     <main>
@@ -29,5 +29,5 @@ export default async function Home({ params }: Props) {
       <Footer />
       <MobileCtaBar />
     </main>
-  );
+  )
 }
