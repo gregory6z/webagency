@@ -34,10 +34,10 @@
       "subtitle": "Isso nos ajuda a propor a melhor solução",
       "budget": "Orçamento estimado",
       "budgetOptions": {
-        "small": "< R$ 15.000",
-        "medium": "R$ 15.000 - R$ 40.000",
-        "large": "R$ 40.000 - R$ 75.000",
-        "enterprise": "> R$ 75.000",
+        "small": "< 3.000 €",
+        "medium": "3.000 € - 8.000 €",
+        "large": "8.000 € - 15.000 €",
+        "enterprise": "> 15.000 €",
         "unknown": "A definir"
       },
       "timeline": "Prazo desejado",
