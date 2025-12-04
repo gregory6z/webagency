@@ -1,5 +1,6 @@
 "use client"
 
+import emailjs from "@emailjs/browser"
 import { AnimatePresence, motion } from "framer-motion"
 import {
   ArrowLeft,
@@ -44,6 +45,12 @@ const projectTypes = [
 const budgetOptions = ["small", "medium", "large", "enterprise", "unknown"] as const
 const timelineOptions = ["urgent", "normal", "flexible", "unknown"] as const
 
+// Email validation regex
+const isValidEmail = (email: string) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
+
 type FormData = {
   projectType: string
   budget: string
@@ -54,6 +61,7 @@ type FormData = {
   company: string
   website: string
   message: string
+  honeypot: string // Anti-bot field
 }
 
 export function ContactDialog({ children }: ContactDialogProps) {
@@ -74,6 +82,7 @@ export function ContactDialog({ children }: ContactDialogProps) {
     company: "",
     website: "",
     message: "",
+    honeypot: "",
   })
 
   const totalSteps = 4
@@ -90,7 +99,7 @@ export function ContactDialog({ children }: ContactDialogProps) {
       case 2:
         return formData.budget !== "" && formData.timeline !== ""
       case 3:
-        return formData.name !== "" && formData.email !== ""
+        return formData.name !== "" && formData.email !== "" && isValidEmail(formData.email)
       case 4:
         return formData.message !== ""
       default:
@@ -113,37 +122,35 @@ export function ContactDialog({ children }: ContactDialogProps) {
   const handleSubmit = async () => {
     if (!canGoNext()) return
 
+    // Honeypot check - if filled, it's a bot
+    if (formData.honeypot) {
+      // Fake success to not alert the bot
+      setIsSuccess(true)
+      return
+    }
+
     setIsSubmitting(true)
     setError(null)
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/gregoryrag@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `Novo projeto: ${formData.projectType}`,
-          nome: formData.name,
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          name: formData.name,
           email: formData.email,
-          telefone: formData.phone || "Não informado",
-          empresa: formData.company || "Não informado",
-          tipo_projeto: formData.projectType,
-          orcamento: formData.budget,
-          prazo: formData.timeline,
-          site_atual: formData.website || "Não informado",
-          mensagem: formData.message,
-        }),
-      })
+          phone: formData.phone || "Não informado",
+          company: formData.company || "Não informado",
+          project_type: formData.projectType,
+          budget: formData.budget,
+          timeline: formData.timeline,
+          website: formData.website || "Não informado",
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      )
 
-      const data = await response.json()
-
-      if (data.success === "true" || data.success === true) {
-        setIsSuccess(true)
-      } else {
-        throw new Error("Form submission failed")
-      }
+      setIsSuccess(true)
     } catch {
       setError(t("error"))
     } finally {
@@ -168,6 +175,7 @@ export function ContactDialog({ children }: ContactDialogProps) {
           company: "",
           website: "",
           message: "",
+          honeypot: "",
         })
       }, 300)
     }
@@ -445,6 +453,20 @@ export function ContactDialog({ children }: ContactDialogProps) {
                           placeholder={t("step4.messagePlaceholder")}
                           rows={4}
                           className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus-visible:border-accent focus-visible:ring-accent/20 resize-none"
+                        />
+                      </div>
+
+                      {/* Honeypot - hidden from humans, visible to bots */}
+                      <div className="absolute -left-[9999px] opacity-0 h-0 overflow-hidden" aria-hidden="true">
+                        <label htmlFor="website_url">Website URL</label>
+                        <input
+                          type="text"
+                          id="website_url"
+                          name="website_url"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          value={formData.honeypot}
+                          onChange={(e) => updateFormData("honeypot", e.target.value)}
                         />
                       </div>
                     </div>
