@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { type ReactNode, useEffect, useRef } from "react"
+import { type ReactNode, useCallback, useEffect, useRef, useState } from "react"
 
 interface GlowCardProps {
   children: ReactNode
@@ -13,14 +13,6 @@ interface GlowCardProps {
   customSize?: boolean
 }
 
-const glowColorMap = {
-  blue: { base: 220, spread: 200, saturation: 100, lightness: 70 },
-  purple: { base: 280, spread: 300, saturation: 100, lightness: 70 },
-  green: { base: 155, spread: 0, saturation: 25, lightness: 20 },
-  red: { base: 0, spread: 200, saturation: 100, lightness: 70 },
-  orange: { base: 30, spread: 200, saturation: 100, lightness: 70 },
-}
-
 const sizeMap = {
   sm: "w-48 h-64",
   md: "w-64 h-80",
@@ -30,68 +22,47 @@ const sizeMap = {
 const GlowCard: React.FC<GlowCardProps> = ({
   children,
   className = "",
-  glowColor = "green",
   size = "md",
   width,
   height,
   customSize = false,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null)
-  const innerRef = useRef<HTMLDivElement>(null)
+  const [isHovered, setIsHovered] = useState(false)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const rafRef = useRef<number | null>(null)
 
-  useEffect(() => {
-    const syncPointer = (e: PointerEvent) => {
-      const { clientX: x, clientY: y } = e
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (rafRef.current) return
 
+    rafRef.current = requestAnimationFrame(() => {
       if (cardRef.current) {
-        cardRef.current.style.setProperty("--x", x.toFixed(2))
-        cardRef.current.style.setProperty("--xp", (x / window.innerWidth).toFixed(2))
-        cardRef.current.style.setProperty("--y", y.toFixed(2))
-        cardRef.current.style.setProperty("--yp", (y / window.innerHeight).toFixed(2))
+        const rect = cardRef.current.getBoundingClientRect()
+        setMousePos({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        })
       }
-    }
-
-    document.addEventListener("pointermove", syncPointer)
-    return () => document.removeEventListener("pointermove", syncPointer)
+      rafRef.current = null
+    })
   }, [])
 
-  const { base, spread, saturation, lightness } = glowColorMap[glowColor]
+  useEffect(() => {
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+      }
+    }
+  }, [])
 
   const getSizeClasses = () => {
-    if (customSize) {
-      return ""
-    }
+    if (customSize) return ""
     return sizeMap[size]
   }
 
-  const getInlineStyles = (): React.CSSProperties & Record<string, string | number> => {
-    const baseStyles: React.CSSProperties & Record<string, string | number> = {
-      "--base": base,
-      "--spread": spread,
-      "--radius": "14",
-      "--border": "1",
-      "--backdrop": "hsl(0 0% 60% / 0.06)",
-      "--backup-border": "var(--backdrop)",
-      "--size": "180",
-      "--outer": "1",
-      "--border-size": "calc(var(--border, 2) * 1px)",
-      "--spotlight-size": "calc(var(--size, 150) * 1px)",
-      "--hue": "calc(var(--base) + (var(--xp, 0) * var(--spread, 0)))",
-      "--saturation": saturation,
-      "--lightness": lightness,
-      backgroundImage: `radial-gradient(
-        var(--spotlight-size) var(--spotlight-size) at
-        calc(var(--x, 0) * 1px)
-        calc(var(--y, 0) * 1px),
-        hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.06)), transparent
-      )`,
-      backgroundColor: "var(--backdrop, transparent)",
-      backgroundSize: "calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)))",
-      backgroundPosition: "50% 50%",
-      backgroundAttachment: "fixed",
-      border: "var(--border-size) solid var(--backup-border)",
-      position: "relative" as const,
-      touchAction: "none" as const,
+  const getInlineStyles = (): React.CSSProperties => {
+    const baseStyles: React.CSSProperties = {
+      position: "relative",
     }
 
     if (width !== undefined) {
@@ -104,87 +75,54 @@ const GlowCard: React.FC<GlowCardProps> = ({
     return baseStyles
   }
 
-  const beforeAfterStyles = `
-    [data-glow]::before,
-    [data-glow]::after {
-      pointer-events: none;
-      content: "";
-      position: absolute;
-      inset: calc(var(--border-size) * -1);
-      border: var(--border-size) solid transparent;
-      border-radius: calc(var(--radius) * 1px);
-      background-attachment: fixed;
-      background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
-      mask-clip: padding-box, border-box;
-      mask-composite: intersect;
-    }
-
-    [data-glow]::before {
-      background-image: radial-gradient(
-        calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
-        calc(var(--x, 0) * 1px)
-        calc(var(--y, 0) * 1px),
-        hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 0.6)), transparent 100%
-      );
-      filter: brightness(1.5);
-    }
-
-    [data-glow]::after {
-      background-image: radial-gradient(
-        calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
-        calc(var(--x, 0) * 1px)
-        calc(var(--y, 0) * 1px),
-        hsl(0 100% 100% / var(--border-light-opacity, 0.5)), transparent 100%
-      );
-    }
-
-    [data-glow] [data-glow] {
-      position: absolute;
-      inset: 0;
-      will-change: filter;
-      opacity: var(--outer, 1);
-      border-radius: calc(var(--radius) * 1px);
-      border-width: calc(var(--border-size) * 20);
-      filter: blur(calc(var(--border-size) * 10));
-      background: none;
-      pointer-events: none;
-      border: none;
-    }
-
-    [data-glow] > [data-glow]::before {
-      inset: -10px;
-      border-width: 10px;
-    }
-  `
-
   return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: beforeAfterStyles }} />
-      <div
-        ref={cardRef}
-        data-glow
-        style={getInlineStyles()}
-        className={`
-          ${getSizeClasses()}
-          ${!customSize ? "aspect-[3/4]" : ""}
-          rounded-2xl
-          relative
-          grid
-          grid-rows-[1fr_auto]
-          shadow-[0_1rem_2rem_-1rem_black]
-          p-4
-          gap-4
-          backdrop-blur-[5px]
-          ${className}
-        `}
-      >
-        <div ref={innerRef} data-glow />
-        {children}
-      </div>
-    </>
+    // biome-ignore lint/a11y/noStaticElementInteractions: Mouse events are for visual glow effect only
+    <div
+      ref={cardRef}
+      style={getInlineStyles()}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onMouseMove={handleMouseMove}
+      className={`
+        ${getSizeClasses()}
+        ${!customSize ? "aspect-[3/4]" : ""}
+        rounded-2xl
+        relative
+        grid
+        grid-rows-[1fr_auto]
+        p-4
+        gap-4
+        border border-white/10
+        bg-white/[0.03]
+        transition-colors duration-300
+        hover:border-accent/30 hover:bg-white/[0.05]
+        ${className}
+      `}
+    >
+      {/* Glow effect - only renders when hovered */}
+      {isHovered && (
+        <div
+          className="pointer-events-none absolute inset-0 rounded-2xl opacity-60 transition-opacity duration-300"
+          style={{
+            background: `radial-gradient(300px circle at ${mousePos.x}px ${mousePos.y}px, rgba(97, 190, 153, 0.15), transparent 60%)`,
+          }}
+        />
+      )}
+      {/* Border glow */}
+      {isHovered && (
+        <div
+          className="pointer-events-none absolute inset-0 rounded-2xl"
+          style={{
+            background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(97, 190, 153, 0.1), transparent 50%)`,
+            mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            maskComposite: "xor",
+            WebkitMaskComposite: "xor",
+            padding: "1px",
+          }}
+        />
+      )}
+      <div className="relative z-10">{children}</div>
+    </div>
   )
 }
 
