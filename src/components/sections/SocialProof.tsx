@@ -90,25 +90,12 @@ export function SocialProof() {
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-bg-primary to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-bg-primary to-transparent z-10" />
 
-            {/* Scrolling container - CSS animation for better mobile performance */}
-            <div className="flex animate-scroll">
-              {/* First set */}
-              {techLogos.map((tech) => (
+            {/* Scrolling container - truly infinite */}
+            <div className="flex w-max animate-marquee">
+              {/* Triple the logos for seamless infinite loop */}
+              {[...techLogos, ...techLogos, ...techLogos].map((tech, index) => (
                 <div
-                  key={tech.name}
-                  className="flex flex-col items-center gap-2 md:gap-3 mx-5 md:mx-10 flex-shrink-0"
-                >
-                  <tech.icon
-                    className="w-8 h-8 md:w-12 md:h-12 text-white/40"
-                    aria-label={tech.name}
-                  />
-                  <span className="text-[10px] md:text-xs text-white/40">{tech.name}</span>
-                </div>
-              ))}
-              {/* Duplicate for seamless loop */}
-              {techLogos.map((tech) => (
-                <div
-                  key={`${tech.name}-dup`}
+                  key={`${tech.name}-${index}`}
                   className="flex flex-col items-center gap-2 md:gap-3 mx-5 md:mx-10 flex-shrink-0"
                 >
                   <tech.icon

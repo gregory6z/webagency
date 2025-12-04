@@ -105,21 +105,23 @@ body {
   }
 }
 
-/* Infinite scroll animation - GPU accelerated */
-@keyframes scroll {
+/* Infinite marquee animation - truly seamless */
+@keyframes marquee {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
   100% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translateX(-33.333%);
   }
 }
 
-.animate-scroll {
-  animation: scroll 30s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-  perspective: 1000px;
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Pause on hover for better UX */
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Aurora background animation */
